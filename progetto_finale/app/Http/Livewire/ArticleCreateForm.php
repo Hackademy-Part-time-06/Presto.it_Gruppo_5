@@ -4,13 +4,16 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Article;
+use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleCreateForm extends Component
 {
-    public $title, $price, $description;
+    public $user_id, $category_id, $title, $price, $description;
         
     //Validazione
     protected $rules = [
+        'category_id'   => 'required',
         'title'         => 'required',
         'price'         => 'required',
         'description'   => 'required|min:8'
@@ -21,12 +24,15 @@ class ArticleCreateForm extends Component
         $this->validate();
     
         Article::create([
+                            //Ottengo l'id dell'user
+            'user_id'       => Auth::user()->id,
+            'category_id'   => $this->category_id,
             'title'         => $this->title,
             'price'         => $this->price,
             'description'   => $this->description,
         ]);
         
-        $this->reset('title','price','description');
+        $this->reset('user_id','category_id','title','price','description');
         
         session()->flash('article', 'Articolo inserito correttamente');
         /*
@@ -38,6 +44,7 @@ class ArticleCreateForm extends Component
 
     public function render()
     {
-        return view('livewire.article-create-form');
+        $categories = Category::all();
+        return view('livewire.article-create-form', compact('categories'));
     }
 }

@@ -20,6 +20,12 @@
     <form wire:submit.prevent="update">
     @csrf
 
+        <select class="form-select mb-3" aria-label="Default select example" wire:model.lazy="category_id">
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
+
         <div class="mb-3">
             <label for="input-title" class="form-label">Title</label>
             <!-- wire.model.lazy fa si che la chiamata parta solo quando il focus viene spostato dall'input -->

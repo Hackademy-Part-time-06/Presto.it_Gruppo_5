@@ -6,6 +6,7 @@
             <th scope="col">Title</th>
             <th scope="col">Price</th>
             <th scope="col">Description</th>
+            <th scope="col">Category</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -16,6 +17,7 @@
                 <td>{{$article->title}}</td>
                 <td>{{$article->price}}</td>
                 <td>{{$article->description}}</td>
+                <td>{{$article->category->name}}</td>
                 <td>
                     <a href="{{route('articles.show', $article)}}" class="btn btn-sm btn-outline-info">See Details</a>
                     <a href="{{route('articles.edit', $article)}}" class="btn btn-sm btn-outline-warning">Edit</a>
