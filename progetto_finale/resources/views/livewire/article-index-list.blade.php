@@ -1,3 +1,7 @@
+@foreach ($articles as $article)
+<x-card :article="$article" /> 
+@endforeach
+
 <div class="mt-5 container">
     <table class="table table-striped shadow">
         <thead>
@@ -25,4 +29,4 @@
           @endforeach
         </tbody>
     </table>
-</div>
+</div> 
