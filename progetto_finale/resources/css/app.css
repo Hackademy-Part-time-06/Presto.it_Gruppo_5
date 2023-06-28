@@ -2,3 +2,10 @@
 @import'navbar.css';
 @import 'header.css';
 @import'card.css';
+@import'login.css';
+
+
+
+body {
+    font-family: 'Belleza', sans-serif;
+}
