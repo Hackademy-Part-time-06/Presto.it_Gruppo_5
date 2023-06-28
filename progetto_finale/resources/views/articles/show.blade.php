@@ -11,6 +11,9 @@
             <li>
                 Description: {{$article->description}}
             </li>
+            <li>
+                User: {{$article->user_id}}
+            </li>
         </ul>
         <a href="{{route('articles.edit', $article)}}" class="btn btn-sm btn-outline-warning">Edit</a>
         <livewire:article-delete-form :article="$article"/>
