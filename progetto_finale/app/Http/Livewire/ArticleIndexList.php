@@ -9,10 +9,13 @@ use League\CommonMark\Node\Block\Document;
 
 class ArticleIndexList extends Component
 {
+    //public $search;
+
     public function render()
     {
         $categories = Category::all();
-        $articles = Article::all();//->where('category_id',);
+        //ordinati in ordine cronologico con una paginazione da 5 articoli
+        $articles = Article::orderBy('created_at')->paginate(6);//->where('title','like','%'.$this->search.'%');
         return view('livewire.article-index-list', compact('articles'), compact('categories'));
     }
 }

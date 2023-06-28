@@ -17,11 +17,12 @@
     @endif
 
     <!-- Form -->
-
+    
     <form wire:submit.prevent="store">
         @csrf
 
         <select class="form-select mb-3" aria-label="Default select example" wire:model.lazy="category_id">
+            <option selected>Tutte le categorie</option>
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->name}}</option>
             @endforeach
