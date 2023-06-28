@@ -6,7 +6,7 @@
         <option value="{{$category->id}}">>{{$category->name}}</option>
       @endforeach
     </select>
-  </div>
+</div>
       
   <div class="col">
     <button type="submit" class="btn btn-outline-success btn-sm">Sort</button>

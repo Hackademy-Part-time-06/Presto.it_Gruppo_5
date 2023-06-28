@@ -9,14 +9,10 @@ use League\CommonMark\Node\Block\Document;
 
 class ArticleIndexList extends Component
 {
-    public $search;
-    public $category;
-
     public function render()
     {
         $categories = Category::all();
         $articles = Article::all();//->where('category_id',);
-
-        return view('livewire.article-index-list', ['articles', Article::whereLike('category_id')], compact('categories'));
+        return view('livewire.article-index-list', compact('articles'), compact('categories'));
     }
 }

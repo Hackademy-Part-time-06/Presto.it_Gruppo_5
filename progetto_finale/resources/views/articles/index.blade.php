@@ -1,4 +1,6 @@
 <x-main>
+
+    
     Articles.index
     <div class="container">
         
