@@ -2,7 +2,6 @@
 @import'navbar.css';
 @import 'header.css';
 @import'card.css';
-<<<<<<< HEAD
 @import'login.css';
 
 
@@ -10,6 +9,4 @@
 body {
     font-family: 'Belleza', sans-serif;
 }
-=======
 @import'carousel.css';
->>>>>>> 83fe5ca75efde14bec25152badf2ad825f8ebe02
