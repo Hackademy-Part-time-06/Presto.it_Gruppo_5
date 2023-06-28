@@ -1,12 +1,8 @@
 <x-main>
+    <x-navbar/>
+    <x-header/>
     <div class="container">
-        <div class="row">
-            Homepage
-        </div>
-        <div class="row">
-            <h3 class="text-center">Latest Articles</h3>
-        </div>
-        <div class="row">
+        <div class="row mt-4">
             @foreach ($latestarticles as $latestarticle)
                 <x-homecard :latestarticle="$latestarticle" />
             @endforeach

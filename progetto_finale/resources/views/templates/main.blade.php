@@ -14,7 +14,7 @@
    
    
 
-    <main>
+    <main class="page-section bg-light">
         {{$slot}}
     </main>
 
