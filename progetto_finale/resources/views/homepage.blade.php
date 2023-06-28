@@ -11,10 +11,12 @@
             <h3 class="section-subheading text-muted">Non perderti le nostre offerte.</h3>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
+            
             @foreach ($latestarticles as $latestarticle)
+            <div class="col-lg-4 col-sm-6 mb-4">
                 <x-homecard :latestarticle="$latestarticle" />
+            </div>
             @endforeach
-        </div>
+        
     </div>
 </x-main>
