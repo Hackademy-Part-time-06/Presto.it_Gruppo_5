@@ -23,3 +23,4 @@ Route::get('articles', [ArticleController::class, 'index'])->name('articles.inde
 Route::get('articles/{article}/show', [ArticleController::class , 'show'])->name('articles.show');
 Route::get('articles/{article}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
 Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
+

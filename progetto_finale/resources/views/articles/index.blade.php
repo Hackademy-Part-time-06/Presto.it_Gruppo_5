@@ -1,5 +1,8 @@
 <x-main>
     Articles.index
-
-    <livewire:article-index-list />
+    <div class="container">
+        
+        <livewire:article-index-list />
+        
+    </div>
 </x-main>

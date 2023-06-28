@@ -4,13 +4,19 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Article;
+use App\Models\Category;
+use League\CommonMark\Node\Block\Document;
 
 class ArticleIndexList extends Component
 {
+    public $search;
+    public $category;
+
     public function render()
     {
-        $articles = Article::all();
+        $categories = Category::all();
+        $articles = Article::all();//->where('category_id',);
 
-        return view('livewire.article-index-list', compact('articles'));
+        return view('livewire.article-index-list', ['articles', Article::whereLike('category_id')], compact('categories'));
     }
 }
