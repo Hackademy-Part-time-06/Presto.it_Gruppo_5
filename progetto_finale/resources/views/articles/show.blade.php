@@ -35,38 +35,19 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
-                    
+
                 </section>
             </div>
 
-            <div class="col-md-6" >
+            <div class="col-md-6">
                 <div class="lista">
-                    <ul class="bg-light list-group">
-                        <li class="list-group-item">Title: {{ $article->title }}</li>
-                        <li class="list-group-item">Price: {{ $article->price }}</li>
-                        <li class="list-group-item">Description: {{ $article->description }}</li>
-                        <li class="list-group-item">User: {{ $article->user_id }}</li>
-                        <li class="list-group-item">And a fifth one</li>
-                      </ul>
-                <ul>
-                    <li>
-                        Title: {{ $article->title }}
-                    </li>
-                    <li>
-                        Price: {{ $article->price }}
-                    </li>
-                    <li>
-                        Description: {{ $article->description }}
-                    </li>
-                    <li>
-                        User: {{ $article->user_id }}
-                    </li>
-                </ul>
-                <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-outline-warning">Edit</a>
-                <livewire:article-delete-form :article="$article" />
+                        <h1 class="display-5 fw-bolder">{{ $article->title }}</h1>
+                        <p>Price: {{ $article->price }}</p>
+                        <p>Description: {{ $article->description }}</p>
+                        <p>User: {{ $article->user_id }}</p>
+                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-outline-warning">Edit</a>
+                        <livewire:article-delete-form :article="$article" />
                 </div>
-
             </div>
         </div>
-    </div>
 </x-main>
