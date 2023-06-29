@@ -74,7 +74,7 @@
 
 
 
-<nav id='menu'>
+<nav class="fixed-top" id='menu'>
     <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
     <ul>
         <li><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
