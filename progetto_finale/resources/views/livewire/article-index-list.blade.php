@@ -2,7 +2,7 @@
 <div class="container">
 
     <!-- Page Heading -->
-    <div class="row">
+    <div class="row list-index">
         <div class="col-3">
             <select class="mb-3 form-select shadow" id="select_category" name="select_category"
                 aria-label="Default select example">
