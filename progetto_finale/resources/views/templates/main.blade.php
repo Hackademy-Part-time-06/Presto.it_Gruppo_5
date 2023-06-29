@@ -7,8 +7,10 @@
     <title>Document</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     @livewireStyles
+    
 </head>
 <body>
+    
 
     <x-navbar />
    
@@ -16,10 +18,12 @@
 
     <main class="page-section bg-light">
         {{$slot}}
+        
     </main>
 
     <x-footer />
 
     @livewireScripts 
+    
 </body>
 </html>
