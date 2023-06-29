@@ -1,5 +1,4 @@
 <x-main>
-    <x-navbar/>
     <x-header/>
     <div class="container">
         <div class="row mt-4">

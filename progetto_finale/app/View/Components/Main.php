@@ -22,7 +22,6 @@ class Main extends Component
      */
     public function render(): View|Closure|string
     {
-        $categories = Category::all();
-        return view('templates.main', compact('categories'));
+        return view('templates.main');
     }
 }

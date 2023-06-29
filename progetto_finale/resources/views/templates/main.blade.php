@@ -13,7 +13,7 @@
 
 <body>
 
-    <x-navbar :categories="$categories"/>
+    <livewire:navbar />
 
     <main class="page-section bg-light">
         {{ $slot }}
