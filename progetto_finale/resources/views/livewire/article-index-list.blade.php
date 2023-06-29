@@ -11,14 +11,18 @@
           <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
       </select>
-      
-  </div>
+    </div>
 
-  <div class="col-3 p-1">
-    <button type="submit" class="btn btn-outline-dark btn-sm ">Sort</button>
-  
-</div>
- 
+    <!-- Search bar -->
+    <div class="col-3">
+      <div class="input-group">
+        <div class="form-outline">
+          <input type="search" wire:model.debounce.500ms="search" id="form1" class="form-control" />
+          <label class="form-label" for="form1">Search</label>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="row">
     @foreach ($articles as $article)
