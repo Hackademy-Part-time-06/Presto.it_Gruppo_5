@@ -1,54 +1,76 @@
-<div class="row">
-  <div class="col-3">
-    <select class="mb-3 form-select shadow" id="select_category" name="select_category" aria-label="Default select example">
-      <option selected>Tutte le categorie</option>
-      @foreach ($categories as $category)
-        <option value="{{$category->id}}">{{$category->name}}</option>
-      @endforeach
-    </select>
-</div>
 
-<div class="col">
-    <button type="submit" class="btn btn-outline-success btn-sm">Sort</button>
-</div>
+<!-- Page Content -->
+<div class="container">
 
-<div class="row">
-  <!-- Input Search non funzionante correttamente:
-    <input class="form-control mb-3" type="search" wire:model.lazy="search" placeholder="Search for articles">
-  -->
-
-  <div class="col">
-    <table class="table table-striped shadow">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Title</th>
-          <th scope="col">Price</th>
-          <th scope="col">Description</th>
-          <th scope="col">Category</th>
-          <th scope="col">Created at</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach ($articles as $article)
-          <tr>
-              <th scope="row">{{$article->id}}</th>
-              <td>{{$article->title}}</td>
-              <td>{{$article->price}}</td>
-              <td>{{$article->description}}</td>
-              <td>{{$article->category->name}}</td>
-              <td>{{$article->created_at}}</td>
-              <td>
-                  <a href="{{route('articles.show', $article)}}" class="btn btn-sm btn-outline-info">See Details</a>
-                  <a href="{{route('articles.edit', $article)}}" class="btn btn-sm btn-outline-warning">Edit</a>
-                  <livewire:article-delete-form :article="$article"/>
-              </td>
-          </tr>
+  <!-- Page Heading -->
+  <div class="row">
+    <div class="col-3">
+      <select class="mb-3 form-select shadow" id="select_category" name="select_category" aria-label="Default select example">
+        <option selected>Tutte le categorie</option>
+        @foreach ($categories as $category)
+          <option value="{{$category->id}}">{{$category->name}}</option>
         @endforeach
-      </tbody>
-  </table>
-  {{$articles->links()}}
+      </select>
+      
   </div>
+
+  <div class="col-3 p-1">
+    <button type="submit" class="btn btn-outline-dark btn-sm ">Sort</button>
+  
 </div>
+ 
+
+  <div class="row">
+    <div class="col-lg-4 col-sm-6 mb-4">
+      @foreach ($articles as $article)
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <h3>{{$article->title}}</h3>
+            <hr>
+          </h4>
+          <p class="card-text">Prezzo: {{$article->price}}</p>
+          
+          <p class="card-text">Descrizione: {{$article->description}}</p>
+          
+          <p class="card-text">Categoria: {{$article->category->name}}</p>
+          <a href="{{route('articles.show', $article)}}" class="btn btn-sm btn-outline-info">Dettagli</a>
+          <a href="{{route('articles.edit', $article)}}" class="btn btn-sm btn-outline-warning">Modifica</a>
+          <livewire:article-delete-form :article="$article"/>
+        </div>
+      </div>
+      @endforeach
+    </div>
+    {{$articles->links()}}
+  </div>
+  <!-- Pagination -->
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#">3</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+
+</div>
+<!-- /.container -->
+
+
 

@@ -41,11 +41,14 @@
 
             <div class="col-md-6">
                 <div class="lista">
-                        <h1 class="display-5 fw-bolder">{{ $article->title }}</h1>
-                        <p>Price: {{ $article->price }}</p>
-                        <p>Description: {{ $article->description }}</p>
+                        <h1 class="display-5 fw-bolder py-2">{{ $article->title }}</h1>
+                        <p>Prezzo: {{ $article->price }}</p>
+                        <hr>
+                        <p>Descrizione: {{ $article->description }}</p>
+                        <hr>
                         <p>User: {{ $article->user_id }}</p>
-                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-sm btn-outline-warning">Edit</a>
+                        <hr>
+                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-outline-secondary btn-sm">Modifica</a>
                         <livewire:article-delete-form :article="$article" />
                 </div>
             </div>

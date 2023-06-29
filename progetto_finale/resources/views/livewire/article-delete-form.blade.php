@@ -1,1 +1,1 @@
-<button wire:click="destroy({{$article}})" class="btn btn-sm btn-outline-danger">Delete</button> 
+<button wire:click="destroy({{$article}})" class="btn btn-outline-danger btn-sm">Elimina</button> 
