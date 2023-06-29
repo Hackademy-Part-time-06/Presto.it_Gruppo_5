@@ -32,12 +32,12 @@
                 </li>
                 <!-- Categories -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nav-button ps-2" href="#" data-bs-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle nav-button ps-2" href="" data-bs-toggle="dropdown"
                         aria-expanded="false">Categories</a>
 
                     <ul class="dropNav dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-light hoverDrop" href="">{{$category->name}}</a></li>
+                            <li><a class="dropdown-item text-light hoverDrop" href="{{route('category.show',$category)}}">{{$category->name}}</a></li>
                         @endforeach
                     </ul>
 
