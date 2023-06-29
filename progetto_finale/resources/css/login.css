@@ -3,10 +3,21 @@
     margin-top: 150px !important;
 }
 
-.card-img-left {
+.bodyRegister {
+    margin-bottom: 190px !important;
+}
+
+.card-img-left-login {
     width: 45%;
     /* Link to your background image using in the property below! */
-    background: scroll center url('https://media.istockphoto.com/id/1322220448/photo/abstract-digital-futuristic-eye.jpg?s=612x612&w=0&k=20&c=oAMmGJxyTTNW0XcttULhkp5IxfW9ZTaoVdVwI2KwK5s=');
+    background: scroll center url('https://images.unsplash.com/photo-1599394407175-b6da85464b90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
+    background-size: cover;
+}
+
+.card-img-left-register {
+    width: 45%;
+    /* Link to your background image using in the property below! */
+    background: scroll center url('https://images.unsplash.com/photo-1625314868143-20e93ce3ff33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');
     background-size: cover;
 }
 
