@@ -15,7 +15,7 @@
 
     <x-navbar />
 
-    <main class="page-section bg-light">
+    <main class=" bg-light">
         {{ $slot }}
 
     </main>
