@@ -15,7 +15,7 @@
 
     <livewire:navbar />
 
-    <main class=" bg-light">
+    <main class=" bg-light ">
         {{ $slot }}
 
     </main>
