@@ -11,3 +11,7 @@
 body {
     font-family: 'Belleza', sans-serif;
 }
+
+main {
+    min-height: 100vh;
+}
