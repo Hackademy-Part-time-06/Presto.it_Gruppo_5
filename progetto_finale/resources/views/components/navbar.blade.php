@@ -10,7 +10,7 @@
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 <li class="nav-item"><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif"
                         aria-current="page" href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link nav-button ps-2" href="#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link nav-button ps-2" href="#portfolio">Categorie</a></li>
                 <li class="nav-item"><a class="nav-link nav-button ps-2" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link nav-button ps-2" href="#team">Team</a></li>
                 <li class="nav-item"><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'contacts') active @endif"
@@ -40,7 +40,7 @@
                     <ul class="dropNav dropdown-menu">
                         @auth
                             <!-- logout form-->
-                            <li><a class="dropdown-item" href="#"
+                            <li><a class="dropdown-item hoverDrop text-light" href="#"
                                     onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
                             </li>
                             <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">@csrf
