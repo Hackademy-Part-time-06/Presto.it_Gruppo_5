@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-secondary" id="mainNav">
+{{-- <nav class="navbar navbar-expand-lg fixed-top bg-secondary" id="mainNav">
     <div class="container">
         <a class="" href="#page-top"><img src="" alt="logo" /></a>
         <button class="navbar_toggler navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -37,7 +37,8 @@
 
                     <ul class="dropNav dropdown-menu">
                         @foreach ($categories as $category)
-                            <li><a class="dropdown-item text-light hoverDrop" href="{{route('category.show',$category)}}">{{$category->name}}</a></li>
+                            <li><a class="dropdown-item text-light hoverDrop"
+                                    href="{{ route('category.show', $category) }}">{{ $category->name }}</a></li>
                         @endforeach
                     </ul>
 
@@ -67,4 +68,55 @@
             </ul>
         </div>
     </div>
+</nav> --}}
+
+
+
+
+
+<nav id='menu'>
+    <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+    <ul>
+        <li><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
+                href="{{ route('home') }}">Home</a></li>
+        <li><a class='dropdown-arrow' href='#'>Articoli</a>
+            <ul class='sub-menus'>
+                <li><a href="{{ route('articles.index') }}">Articoli inseriti</a></li>
+                <li><a href="{{ route('articles.create') }}">Inserisci un articolo</a></li>
+
+            </ul>
+        </li>
+        <li><a class='dropdown-arrow' href='#'>Categorie</a>
+            <ul class='sub-menus'>
+
+                @foreach ($categories as $category)
+                    <li><a href="{{ route('category.show', $category) }}">{{ $category->name }}</a></li>
+                @endforeach
+
+            </ul>
+        </li>
+        <li><a href='#'>Contact Us</a></li>
+        <li><a href='#'>About</a></li>
+
+        <li>
+            <a class="dropdown-arrow" href="#">Benvenuto @auth {{ Auth::user()->name }}
+                @else
+                Guest @endauth
+            </a>
+            <ul class="sub-menus">
+                @auth
+                    <!-- logout form-->
+                    <li><a href="#"
+                            onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
+                    </li>
+                    <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">@csrf
+                        @method('POST')</form>
+                @else
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a>
+                    </li>
+                @endauth
+            </ul>
+        </li>
+    </ul>
 </nav>
