@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use App\Models\Category;
 
 class Main extends Component
 {
@@ -21,6 +22,7 @@ class Main extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('templates.main');
+        $categories = Category::all();
+        return view('templates.main', compact('categories'));
     }
 }

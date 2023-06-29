@@ -13,7 +13,7 @@
 
 <body>
 
-    <x-navbar />
+    <x-navbar :categories="$categories"/>
 
     <main class="page-section bg-light">
         {{ $slot }}
