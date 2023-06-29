@@ -6,15 +6,16 @@
 @import'carousel.css';
 @import'search_button.css';
 @import'category.css';
+@import'create-article.css';
 
 
 body {
     font-family: 'Belleza', sans-serif;
-  
+
 }
 
 main {
-    min-height: 100vh;
-   
-    
+    min-height: 90vh;
+
+
 }
