@@ -111,10 +111,11 @@
                     </li>
                     <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">@csrf
                         @method('POST')</form>
+                    <!-- Link al profilo utente -->
+                    <li><a href="{{ route('userprofile', Auth::user()->id) }}">Profilo</a></li>
                 @else
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a>
-                    </li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
                 @endauth
             </ul>
         </li>

@@ -26,4 +26,4 @@ Route::get('articles/create', [ArticleController::class, 'create'])->name('artic
 
 Route::get('articles/{category}', [ArticleController::class, 'categoryshow'])->name('category.show');
 
-Route::get('articles/{user}', [ArticleController::class, 'userprofile'])->name('userprofile');
+Route::get('userprofile/{user}', [ArticleController::class, 'userprofile'])->name('userprofile');

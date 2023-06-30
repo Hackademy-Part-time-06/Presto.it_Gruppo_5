@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -71,5 +73,10 @@ class ArticleController extends Controller
 
     public function categoryshow(Category $category){
         return view('articles.categoryshow', compact('category'));
+    }
+
+    public function userprofile(){
+        $articles = Article::where('user_id',Auth::user()->id)->get();
+        return view('userprofile', compact('articles'));
     }
 }
