@@ -85,7 +85,7 @@
                                             <div class="form-group">
                                                 <label for="input-description" class="form-label">Categoria</label>
                                                 <select class="form-select mb-3 form-style"
-                                                    aria-label="Default select example" wire:model.lazy="category_id">
+                                                    aria-label="Default select example" wire:model.defer="category_id">
                                                     <option selected>Tutte le categorie</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}">{{ $category->name }}

@@ -14,7 +14,6 @@ class ArticleEditForm extends Component
     public Article $article;
     
     protected $rules = [
-        'user_id'       => 'required',
         'category_id'   => 'required',
         'title'         => 'required|min:4',
         'price'         => 'required|numeric',

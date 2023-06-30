@@ -14,7 +14,6 @@ class ArticleCreateForm extends Component
 
     //Validazione
     protected $rules = [
-        'user_id'          => 'required',
         'category_id'      => 'required',
         'title'            => 'required|min:4',
         'price'            => 'required|numeric',
