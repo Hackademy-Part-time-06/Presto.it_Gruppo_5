@@ -9,21 +9,21 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleCreateForm extends Component
 {
-    public $user_id, $category_id, $title, $price, $description;
-        
+    public $user_id, $category_id, $title, $price, $description;    
+
     //Validazione
     protected $rules = [
-        'category_id'   => 'required',
-        'title'         => 'required',
-        'price'         => 'required',
-        'description'   => 'required|min:8'
+        'category_id'      => 'required',
+        'title'            => 'required',
+        'price'            => 'required',
+        'description'      => 'required|min:8',
     ];
-
+    
     public function store(){
 
         $this->validate();
-    
-        Article::create([
+
+        Article::create([         
                             //Ottengo l'id dell'user
             'user_id'       => Auth::user()->id,
             'category_id'   => $this->category_id,

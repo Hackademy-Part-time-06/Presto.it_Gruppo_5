@@ -8,7 +8,6 @@
             @empty
                 <h1>non ci sono articoli appartenenti a questa categoria</h1>
             @endforelse
-            
         </ul>
     </div>
 </x-main>

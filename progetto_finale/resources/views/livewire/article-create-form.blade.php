@@ -45,7 +45,7 @@
             <textarea class="form-control" wire:model.debounce.1000ms="description" id="input-description" value="{{old('description')}}" rows="3"></textarea>
             <div id="input-help" class="form-text">We'll never share your informations with anyone else.</div>
         </div>
-            
+
         <button type="submit" class="btn btn-primary">Save</button>
     
     </form>

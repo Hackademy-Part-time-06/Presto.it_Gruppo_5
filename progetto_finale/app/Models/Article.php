@@ -17,4 +17,8 @@ class Article extends Model
     public function user(){
         return $this->belongTo(User::class);
     }
+    
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
 }
