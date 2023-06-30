@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use App\Models\Category;
+
 return new class extends Migration
 {
     /**
@@ -16,8 +18,15 @@ return new class extends Migration
             $table->string('name');
             $table->timestamps();
         });
+        
+        $categories = ['Motori','Auto','Informatica','Articoli per la casa','Videogames','Sport','Immobili','Telefonia','Scuola','Barche'];
+    
+        foreach ($categories as $category) {
+            Category::create(['name'=>$category]);
+        }
     }
 
+    
     /**
      * Reverse the migrations.
      */
