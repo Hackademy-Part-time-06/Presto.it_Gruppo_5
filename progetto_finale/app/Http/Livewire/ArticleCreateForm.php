@@ -9,14 +9,22 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleCreateForm extends Component
 {
+    //Attributi
     public $user_id, $category_id, $title, $price, $description;    
 
     //Validazione
     protected $rules = [
+        'user_id'          => 'required',
         'category_id'      => 'required',
-        'title'            => 'required',
-        'price'            => 'required',
+        'title'            => 'required|min:4',
+        'price'            => 'required|numeric',
         'description'      => 'required|min:8',
+    ];
+
+    protected $messages = [
+        'required'=>'Il campo :attribute è richiesto',
+        'min'     =>'Il campo :attribute è troppo corto',
+        'numeric' =>'Il campo :attribute deve essere di tipo numerico'
     ];
     
     public function store(){
@@ -40,6 +48,11 @@ class ArticleCreateForm extends Component
                 ->route('articles.index')
                     ->with('success','Articolo inserito correttamente');
         */          
+    }
+
+    //Validazione real-time
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
     }
 
     public function render()

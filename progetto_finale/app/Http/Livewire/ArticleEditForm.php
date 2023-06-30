@@ -16,9 +16,15 @@ class ArticleEditForm extends Component
     protected $rules = [
         'user_id'       => 'required',
         'category_id'   => 'required',
-        'title'         => 'required',
-        'price'         => 'required',
+        'title'         => 'required|min:4',
+        'price'         => 'required|numeric',
         'description'   => 'required|min:8'
+    ];
+
+    protected $messages = [
+        'required'=>'Il campo :attribute è richiesto',
+        'min'     =>'Il campo :attribute è troppo corto',
+        'numeric' =>'Il campo :attribute deve essere di tipo numerico'
     ];
 
     //metodo mount(), ci permette di inserire i dati dell'articolo da modificare all'interno degli input.
@@ -43,6 +49,11 @@ class ArticleEditForm extends Component
         ]);
 
         session()->flash('article', 'Articolo modificato correttamente');
+    }
+
+    //Validazione real-time
+    public function updated($propertyName){
+        $this->validateOnly($propertyName);
     }
 
     public function render()
