@@ -10,6 +10,6 @@ class Image extends Model
     use HasFactory;
 
     public function article(){
-        return $this->hasMany(Image::class);
+        return $this->belongsTo(Image::class);
     }
 }
