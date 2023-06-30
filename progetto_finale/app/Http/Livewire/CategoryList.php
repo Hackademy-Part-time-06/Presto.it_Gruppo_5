@@ -9,7 +9,6 @@ class CategoryList extends Component
 {
     public function render()
     {
-        $categories = Category::all();
-        return view('livewire.category-list', compact('categories'));
+        return view('livewire.category-list');
     }
 }

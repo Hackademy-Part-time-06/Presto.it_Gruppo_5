@@ -25,3 +25,5 @@ Route::get('articles/{article}/edit', [ArticleController::class, 'edit'])->name(
 Route::get('articles/create', [ArticleController::class, 'create'])->name('articles.create');
 
 Route::get('articles/{category}', [ArticleController::class, 'categoryshow'])->name('category.show');
+
+Route::get('articles/{user}', [ArticleController::class, 'userprofile'])->name('userprofile');

@@ -56,7 +56,6 @@ class ArticleCreateForm extends Component
 
     public function render()
     {
-        $categories = Category::all();
-        return view('livewire.article-create-form', compact('categories'));
+        return view('livewire.article-create-form');
     }
 }

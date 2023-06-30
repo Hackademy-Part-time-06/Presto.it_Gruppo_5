@@ -57,7 +57,6 @@ class ArticleEditForm extends Component
 
     public function render()
     {
-        $categories = Category::all();
-        return view('livewire.article-edit-form', compact('categories'));
+        return view('livewire.article-edit-form');
     }
 }
