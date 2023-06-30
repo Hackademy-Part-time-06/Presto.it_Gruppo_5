@@ -29,6 +29,15 @@
 
 <x-main>
     <div class="container bodyLogin mt-5">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="row">
             <div class="col-lg-10 col-xl-9 mx-auto">
                 <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
@@ -37,6 +46,12 @@
                     </div>
                     <div class="card-body p-4 p-sm-5">
                         <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+                        {{-- 
+                        <div class="alert alert-danger">
+                            <ul>
+                                <li>These credentials do not match our records.</li>
+                            </ul>
+                        </div> --}}
 
 
                         <form action="{{ route('login') }}" method="POST">
