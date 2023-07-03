@@ -12,14 +12,14 @@
     </footer>
 </div> --}}
 
-<div class="d-none d-lg-block">
+<div class="footer d-none d-lg-block">
 
-    <footer class="bg-secondary footer py-4">
+    <footer class=" bg-dark footer py-2">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                <div class="col-lg-4 text-lg-start" style="color: rgb(212, 212, 212)">Copyright &copy; Your Website 2023</div>
                 <div class="col-lg-4 my-lg-0 text-lg-center">
-                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                    <a  class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
                             class="bi bi-twitter"></i></a>
                     <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
                             class="bi bi-facebook"></i></a>
@@ -29,8 +29,8 @@
                             class="bi bi-instagram"></i></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
-                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
-                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    <a class=" text-decoration-none me-3" style="color: brown" href="#!">Privacy Policy</a>
+                    <a class="text-decoration-none" style="color: brown" href="#!">Terms of Use</a>
                 </div>
             </div>
         </div>
