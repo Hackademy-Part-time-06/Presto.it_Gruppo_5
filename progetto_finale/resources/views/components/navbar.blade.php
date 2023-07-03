@@ -8,17 +8,6 @@
                 <li><a href="{{ route('articles.index') }}">Articoli inseriti</a></li>
                 <li><a href="{{ route('articles.create') }}">Inserisci un articolo</a></li>
 
-                @if (Auth::user()->is_revisor())
-                    <li>
-                        <a href="{{ route('revisor.index') }}">Zona revisore
-                            <span
-                                class="position-absolute top-0 start-100 transale-middle badge rounded-pill bg-danger">{{ app\Models\Article::toBeRevisionatedCount }}
-                                <span class="visually-hidden">unread message</span>
-                            </span>
-                        </a>
-                    </li>
-                @endif
-
 
             </ul>
         </li>
@@ -34,6 +23,10 @@
         <li><a href='#'>Contact Us</a></li>
         <li><a href='#'>About</a></li>
 
+
+
+
+
         <li>
             <a class="dropdown-arrow" href="#">Benvenuto @auth {{ Auth::user()->name }}
                 @else
@@ -41,6 +34,22 @@
             </a>
             <ul class="sub-menus">
                 @auth
+
+                    @if (Auth::user()->is_revisor)
+                        <li>
+                            <a href="{{ route('revisor.index') }}">Zona revisore
+                                <span
+                                    class="position-absolute top-0 start-100 transale-middle badge rounded-pill bg-danger">{{ App\Models\Article::toBeRevisionatedCount() }}
+                                    <span class="visually-hidden">unread message</span>
+                                </span>
+                            </a>
+                        </li>
+                    @endif
+
+
+
+
+
                     <!-- logout form-->
                     <li><a href="#"
                             onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>

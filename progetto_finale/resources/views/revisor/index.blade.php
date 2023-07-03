@@ -5,11 +5,10 @@
             <div class="col-md-6">
 
                 <h1 class="display-2">
-                    {{ article_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare' }}
+                    {{ $article_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare' }}
                 </h1>
 
-                @if (article_to_check)
-
+                @if ($article_to_check)
                     {{-- carosello --}}
                     <section class="mt-4 mx-4">
                         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -45,16 +44,17 @@
                         </div>
 
                     </section>
+
             </div>
 
             <div class="col-md-6">
                 <div class="lista">
-                    <h1 class="display-5 fw-bolder py-2">{{ $article->title }}</h1>
-                    <p>Prezzo: {{ $article->price }}</p>
+                    <h1 class="display-5 fw-bolder py-2">{{ $article_to_check->title }}</h1>
+                    <p>Prezzo: {{ $article_to_check->price }}</p>
                     <hr>
-                    <p>Descrizione: {{ $article->description }}</p>
+                    <p>Descrizione: {{ $article_to_check->description }}</p>
                     <hr>
-                    <p>User: {{ $article->user_id }}</p>
+                    <p>User: {{ $article_to_check->user_id }}</p>
                     <hr>
                     <form action="{{ route('revisor.accept_article', ['article' => $article_to_check]) }}"
                         method="POST">
@@ -72,6 +72,5 @@
                 </div>
             </div>
         </div>
-
-
+        @endif
 </x-main>
