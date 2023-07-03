@@ -3,12 +3,12 @@
     <div class="container">
         <div class="row mt-4">
             <!-- Portfolio Grid-->
-<section class="page-section bg-light" >
+<section class="card-section" >
     <div class="container">
         <div class="row">
              <div class="text-center p-3">
             <h2 class="section-heading text-uppercase">I nostri ultimi articoli</h2>
-            <h3 class="section-subheading text-muted">Non perderti le nostre offerte.</h3>
+            <h3 class="section-subheading">Non perderti le offerte.</h3>
             </div>
        </div>
         
@@ -24,5 +24,6 @@
         </div>
         
     </div>
+    
 </section>
 </x-main>

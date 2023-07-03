@@ -1,9 +1,9 @@
 .section-heading {
 
   background-image: linear-gradient(to right,
-      #020507,
-      #167fe9 50%,
-      #000 50%);
+      #fa0707,
+      #751600 50%,
+      rgb(188 93 93) 50%);
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -16,7 +16,7 @@
 
 .section-heading:before {
   content: '';
-  background: #3d337c;
+  background: #620101;
   display: block;
   position: absolute;
   bottom: -3px;
@@ -34,7 +34,10 @@
   width: 100%;
 }
 
-
+.section-subheading{
+  color: #b46c5c;
+  font-size: 23px;
+}
 
 
 

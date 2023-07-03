@@ -12,6 +12,8 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.0",
-        "bootstrap-icons": "^1.10.5"
+        "bootstrap-icons": "^1.10.5",
+        "three": "^0.154.0",
+        "vanta": "^0.5.24"
     }
 }

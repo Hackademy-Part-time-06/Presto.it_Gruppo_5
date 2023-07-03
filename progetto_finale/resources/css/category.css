@@ -1,24 +1,25 @@
 .circle {
-    width: 100px;
-    height: 100px;
-    background: rgb(150, 146, 146);
-    border-radius: 50%;
-    position: relative;
-    
-  }
+  width: 100px;
+  height: 100px;
+  background: rgb(150, 146, 146);
+  border-radius: 50%;
+  position: relative;
 
-  .icona {
-    position: absolute;
-    top: 30px;
-    left: 30px;
-  
-  }
-  .div-scritta{
-    position: relative;
-  }
+}
 
-  .scritta{
-    position: absolute;
-top: 2px;
-    left: 68px;
-  }
+.icona {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+
+}
+
+.div-scritta {
+  position: relative;
+}
+
+.scritta {
+  position: absolute;
+  top: 2px;
+  left: 68px;
+}
