@@ -2,4 +2,6 @@
 
 
     <livewire:article-create-form />
+
+
 </x-main>
