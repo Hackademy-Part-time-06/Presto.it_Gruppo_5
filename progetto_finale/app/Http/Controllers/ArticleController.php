@@ -14,8 +14,9 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function __construct(){
-        $this->middleware('auth')->except('index','show');
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'show');
     }
 
     public function index()
@@ -71,12 +72,20 @@ class ArticleController extends Controller
         //
     }
 
-    public function categoryshow(Category $category){
+    public function categoryshow(Category $category)
+    {
         return view('articles.categoryshow', compact('category'));
     }
 
-    public function userprofile(){
-        $articles = Article::where('user_id',Auth::user()->id)->get();
+    public function userprofile()
+    {
+        $articles = Article::where('user_id', Auth::user()->id)->get();
         return view('userprofile', compact('articles'));
+    }
+
+    public function indexArticles()
+    {
+        $article = Article::where('is_accepted', true)->paginate(6);
+        return view('articles.index', compact('articles'));
     }
 }

@@ -23,31 +23,26 @@
         <li><a href='#'>Contact Us</a></li>
         <li><a href='#'>About</a></li>
 
-
-
-
+        @auth
+            @if (Auth::user()->is_revisor)
+                <li>
+                    <a href="{{ route('revisor.index') }}">Zona revisore
+                        <span
+                            class="position-absolute top-0 start-90 transale-middle badge rounded-pill bg-danger">{{ App\Models\Article::toBeRevisionatedCount() }}
+                            <span class="visually-hidden">unread message</span>
+                        </span>
+                    </a>
+                </li>
+            @endif
+        @endauth
 
         <li>
-            <a class="dropdown-arrow" href="#">Benvenuto @auth {{ Auth::user()->name }}
+            <a class="dropdown-arrow ms-2" href="#">Benvenuto @auth {{ Auth::user()->name }}
                 @else
                 Guest @endauth
             </a>
-            <ul class="sub-menus">
+            <ul class="sub-menus ms-2">
                 @auth
-
-                    @if (Auth::user()->is_revisor)
-                        <li>
-                            <a href="{{ route('revisor.index') }}">Zona revisore
-                                <span
-                                    class="position-absolute top-0 start-100 transale-middle badge rounded-pill bg-danger">{{ App\Models\Article::toBeRevisionatedCount() }}
-                                    <span class="visually-hidden">unread message</span>
-                                </span>
-                            </a>
-                        </li>
-                    @endif
-
-
-
 
 
                     <!-- logout form-->
