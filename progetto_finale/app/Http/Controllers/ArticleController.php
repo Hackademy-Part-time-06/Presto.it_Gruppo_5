@@ -74,7 +74,9 @@ class ArticleController extends Controller
 
     public function categoryshow(Category $category)
     {
-        return view('articles.categoryshow', compact('category'));
+        $articles=Article::where('is_accepted', true)->where('category_id',$category->id)->get();
+       
+        return view('articles.categoryshow', compact('category','articles'));
     }
 
     public function userprofile()
@@ -85,7 +87,7 @@ class ArticleController extends Controller
 
     public function indexArticles()
     {
-        $article = Article::where('is_accepted', true)->paginate(6);
+        $articles = Article::where('is_accepted', true)->paginate(6);
         return view('articles.index', compact('articles'));
     }
 }

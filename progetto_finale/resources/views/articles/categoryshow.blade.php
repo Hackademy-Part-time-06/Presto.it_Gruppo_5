@@ -1,7 +1,7 @@
 <x-main>
     <div class="container mt-5">
         <ul class="list-group">
-            @forelse ($category->articles as $article)
+            @forelse ($articles as $article)
             <li class="list-group-item">
                 {{$article->title}}
             </li>
