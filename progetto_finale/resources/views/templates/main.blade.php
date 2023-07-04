@@ -8,8 +8,6 @@
     <title>Presto.it</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
-
-
 </head>
 
 <body id="vanta">
@@ -18,22 +16,13 @@
 
     <main>
         {{ $slot }}
-
-
-
     </main>
 
     <x-footer />
 
     @livewireScripts
 
-
-
-
-
-
 </body>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
@@ -49,7 +38,6 @@
         scaleMobile: 1.00,
         color: 0x910004,
         backgroundColor: 0x0
-
     })
 </script>
 

@@ -1,7 +1,7 @@
-<section class="mt-5">
+<section >
     <div class="container">
-        <div class="text-center p-5">
-            <h2 class="section-heading">Categorie</h2>
+        <div class="text-center p-3">
+            <h2 class="section-heading">Esplora le nostre categorie</h2>
         </div>
         <div class=" row text-center">
             @foreach ($categories as $category)
@@ -20,4 +20,5 @@
         </div>
     </div>
     </div>
+    
 </section>
