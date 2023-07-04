@@ -14,7 +14,7 @@ class ArticleIndexList extends Component
     public function render()
     {
         //ordinati in ordine cronologico con una paginazione da 6 articoli
-        $articles = Article::where('title','like','%'.$this->search.'%')->orderBy('created_at')->paginate(6);//->where('title','like','%'.$this->search.'%');
+        $articles = Article::where('is_accepted', true)->take(6)->get()->sortByDesc('created_at');//->where('title','like','%'.$this->search.'%');
         return view('livewire.article-index-list', compact('articles'));
     }
 }
