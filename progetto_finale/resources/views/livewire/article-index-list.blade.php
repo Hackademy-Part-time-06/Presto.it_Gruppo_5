@@ -3,18 +3,18 @@
 
     <!-- Page Heading -->
     <div class="row list-index">
-        <div class="col-3">
-            {{-- <select class="mb-3 form-select shadow" id="select_category" name="select_category"
+        {{-- <div class="col-3">
+            <select class="mb-3 form-select shadow" id="select_category" name="select_category"
               aria-label="Default select example">
               <option selected>Tutte le categorie</option>
               @foreach ($categories as $category)
                   <option value="{{ $category->id }}">{{ $category->name }}</option>
               @endforeach
-          </select> --}}
+          </select>
         </div>
         <div class="col-3 p-1">
             <button type="submit" class="btn btn-outline-dark btn-sm ">Sort</button>
-        </div>
+        </div> --}}
         <div class="row">
             @foreach ($articles as $article)
                 <div class="col-lg-4 col-sm-6 mb-4">
