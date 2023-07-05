@@ -1,14 +1,11 @@
 <x-main>
-    {{-- 
-    @if (!auth()->user()->IsRevisor())
-        <div class="alert alert-danger">
-            Attenzione, non puoi accedere a questa pagina!
-        </div>
-    @endif --}}
+
 
 
     <x-header />
+
     <div class="container">
+
         <div class="row mt-4">
             <section class="card-section">
                 <div class="container">
