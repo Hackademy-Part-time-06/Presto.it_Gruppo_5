@@ -36,3 +36,10 @@ Route::get('/revisor/home', [RevisorController::class, 'index'])->name('revisor.
 Route::patch('/accetta/annuncio/{article}', [RevisorController::class, 'acceptArticle'])->name('revisor.accept_article');
 //*Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{article}', [RevisorController::class, 'rejectArticle'])->name('revisor.reject_article');
+//*Diventa un revisore proteggo la rotta perchè invio i dati del tizio, quindi deve per forza fare un login
+Route::get('/diventa/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+//*Rendi l'utente revisore
+Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+
+
+

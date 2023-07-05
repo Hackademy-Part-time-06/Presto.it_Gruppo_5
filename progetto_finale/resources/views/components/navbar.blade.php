@@ -36,28 +36,47 @@
             @endif
         @endauth
 
-        <li>
-            <a class="dropdown-arrow ms-2" href="#">Benvenuto @auth {{ Auth::user()->name }}
-                @else
-                Guest @endauth
-            </a>
-            <ul class="sub-menus ms-2">
-                @auth
 
 
-                    <!-- logout form-->
-                    <li><a href="#"
-                            onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
-                    </li>
-                    <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">@csrf
-                        @method('POST')</form>
-                    <!-- Link al profilo utente -->
-                    <li><a href="{{ route('userprofile', Auth::user()->id) }}">Profilo</a></li>
-                @else
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
-                @endauth
-            </ul>
-        </li>
+        <div class="d-flex justify-content-end">
+            <div class="justify-content-end px-3">
+                <li>
+
+                    <a class="dropdown-arrow ms-2 " href="#">Benvenuto @auth {{ Auth::user()->name }}
+                        @else
+                        Guest @endauth
+                    </a>
+                    <ul class="sub-menus ms-2">
+                        @auth
+
+                            <!-- logout form-->
+                            <li><a href="#"
+                                    onclick="event.preventDefault(); document.querySelector('#form-logout').submit()">Logout</a>
+                            </li>
+                            <form method="POST" action="{{ route('logout') }}" id="form-logout" class="d-none">@csrf
+                                @method('POST')</form>
+                            <!-- Link al profilo utente -->
+                            <li><a href="{{ route('userprofile', Auth::user()->id) }}">Profilo</a></li>
+                        @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endauth
+
+
+                    </ul>
+
+                <li><a href="{{ route('become.revisor') }}">Lavora con noi</a></li>
+
+                @if (session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+
+
+                </li>
+            </div>
+        </div>
+
     </ul>
 </nav>
