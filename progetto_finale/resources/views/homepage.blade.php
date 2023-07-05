@@ -1,4 +1,12 @@
 <x-main>
+    {{-- 
+    @if (!auth()->user()->IsRevisor())
+        <div class="alert alert-danger">
+            Attenzione, non puoi accedere a questa pagina!
+        </div>
+    @endif --}}
+
+
     <x-header />
     <div class="container">
         <div class="row mt-4">
@@ -19,11 +27,11 @@
                     </div>
                 </div>
                 <div class="container-fluid mb-5">
-                 
+
                     <livewire:category-list />
-                
+
                 </div>
 
             </section>
-         
+
 </x-main>

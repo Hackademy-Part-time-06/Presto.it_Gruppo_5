@@ -1,11 +1,25 @@
-<section >
-    <div class="container">
+<section>
+    <div class="">
         <div class="text-center p-3">
             <h2 class="section-heading">Esplora le nostre categorie</h2>
         </div>
-        <div class=" row text-center">
+        <div class="text-center">
             @foreach ($categories as $category)
-                <div class="col-md-3 my-3">
+                <div class="container-fluid containerCat">
+                    <div class="row mx-5">
+                        <div class="col-md-3 wrapper ">
+                            <div class="cardCat"> <i class="icona bi bi-bag"></i>
+
+                                <h5><a class="scritta"
+                                        href="{{ route('category.show', $category) }}">{{ $category->name }}</a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                {{-- <div class="col-md-3 my-3">
                     <div class="mx-5">
                         <div class="circle mx-2 ">
                             <h1> <i class="icona bi bi-bag"></i></h1>
@@ -15,10 +29,10 @@
                         <h5><a class="scritta" href="{{ route('category.show', $category) }}">{{ $category->name }}</a>
                         </h5>
                     </div>
-                </div>
+                </div> --}}
             @endforeach
         </div>
     </div>
     </div>
-    
+
 </section>

@@ -1,4 +1,4 @@
-.circle {
+/* .circle {
   width: 100px;
   height: 100px;
   background: rgb(150, 146, 146);
@@ -23,11 +23,90 @@
   top: 2px;
   left: 68px;
 }
-.altezza-articoli{
+
+.altezza-articoli {
   margin: 20%;
   color: white;
 
   font-family: 'Times New Roman', Times, serif;
- 
-  
+
+
+} */
+
+
+
+
+.containerCat {
+  grid-gap: 3rem;
+  padding: 2rem 2rem 2rem;
+}
+
+.containerCat .wrapper {
+  transform: skew(-10deg);
+  transition: 0.25s;
+}
+
+.containerCat .wrapper:before {
+  content: '';
+  left: 0;
+  top: 0;
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  border-radius: 40px;
+  opacity: 0;
+  border: 2px solid #ece9e6;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s 0.05s;
+}
+
+.containerCat .wrapper:hover:before {
+  opacity: 1;
+  transform: translateY(1.5rem) translateX(1.5rem);
+}
+
+
+.containerCat .wrapper:nth-child(6) .card:after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #df1a1a7c;
+
+  transform: skew(10deg) scale(1.2);
+  transition: 0.25s;
+}
+
+.containerCat .wrapper:hover {
+  transform: translateX(-1rem) translateY(-1rem) skew(-10deg);
+}
+
+.containerCat .wrapper:hover .card {
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.containerCat .wrapper:hover .card:after {
+  background-blend-mode: normal;
+}
+
+.containerCat .wrapper:hover .card .fal {
+  bottom: 4rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.containerCat .cardCat {
+  background-color: #fff;
+  border-radius: 40px;
+  height: 15rem;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.containerCat .cardCat:after {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
