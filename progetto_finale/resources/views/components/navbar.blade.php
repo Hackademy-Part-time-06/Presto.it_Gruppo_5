@@ -23,11 +23,7 @@
 
         <li><a href="{{ route('become.revisor') }}">Lavora con noi</a></li>
 
-        @if (session()->has('success'))
-            <div class="alert alert-success">
-                {{ session()->get('success') }}
-            </div>
-        @endif
+
 
 
         </li>

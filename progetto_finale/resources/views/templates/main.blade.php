@@ -14,6 +14,11 @@
 
     <x-navbar />
 
+    @if (session()->has('success'))
+        <div class="alert alert-success text-center w-50 m-auto mt-5 mb-5">
+            {{ session()->get('success') }}
+        </div>
+    @endif
     <main>
         {{ $slot }}
     </main>
