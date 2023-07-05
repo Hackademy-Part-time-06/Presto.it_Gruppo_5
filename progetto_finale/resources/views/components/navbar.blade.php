@@ -20,7 +20,17 @@
 
             </ul>
         </li>
-        <li><a href='#'>Contact Us</a></li>
+       
+        <li><a href="{{ route('become.revisor') }}">Lavora con noi</a></li>
+
+                @if (session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+
+
+                </li>
         <li><a href='#'>About</a></li>
 
         @auth
@@ -65,13 +75,16 @@
 
                     </ul>
 
-                <li><a href="{{ route('become.revisor') }}">Lavora con noi</a></li>
+                    <li><a class='dropdown-arrow' href='#'><i class="bi bi-globe"></i></a>
+                        <ul class='sub-menus'>
+                            <li><a  href="#">IT</a></li>     
+                            <li><a href="#">EN</a></li>
+            
+            
+                        </ul>
+                    </li>
 
-                @if (session()->has('success'))
-                    <div class="alert alert-success">
-                        {{ session()->get('success') }}
-                    </div>
-                @endif
+               
 
 
                 </li>
