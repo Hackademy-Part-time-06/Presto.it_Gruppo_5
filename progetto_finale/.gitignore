@@ -19,3 +19,5 @@ yarn-error.log
 /.vscode
 /storage/articles.index-shm
 /storage/articles.index-wal
+/storage/advs.index-shm
+/storage/advs.index-wal

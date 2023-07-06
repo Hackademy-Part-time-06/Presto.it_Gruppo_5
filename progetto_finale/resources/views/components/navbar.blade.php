@@ -21,7 +21,7 @@
             </ul>
         </li>
 
-        <li><a href="{{ route('become.revisor') }}">Lavora con noi</a></li>
+        <li><a href="{{ route('submit.revisor') }}">Lavora con noi</a></li>
 
 
 
