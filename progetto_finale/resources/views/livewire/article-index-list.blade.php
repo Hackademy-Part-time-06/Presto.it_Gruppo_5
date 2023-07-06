@@ -31,10 +31,14 @@
                             <p class="card-text">Descrizione: {{ $article->description }}</p>
 
                             <p class="card-text">Categoria: {{ $article->category->name }}</p>
-                            <a href="{{ route('articles.show', $article) }}"
-                                class="btn btn-sm btn-outline-info">Dettagli</a>
-                            <a href="{{ route('articles.edit', $article) }}"
-                                class="btn btn-sm btn-outline-warning">Modifica</a>
+
+
+                            <button class="custom-btn btn-5"><span><a href="{{ route('articles.show', $article) }}"
+                                        class="">Dettagli</a></button>
+
+                            <button class="custom-btn btn-5"><span> <a href="{{ route('articles.edit', $article) }}"
+                                        class="">Modifica</a></span></button>
+
                             <livewire:article-delete-form :article="$article" />
                         </div>
                     </div>

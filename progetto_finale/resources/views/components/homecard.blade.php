@@ -7,8 +7,8 @@
         </h4>
         <p class="card-text">Prezzo: {{ $latestarticle->price }}</p>
         <p class="card-text">Categoria: {{ $latestarticle->category->name }}</p>
-        <a href="{{ route('articles.show', $latestarticle) }}" class="btn btn-outline-secondary">See
-            details</a>
+        <button class="custom-btn btn-6 ps-3 pe-3"><span><a href="{{ route('articles.show', $latestarticle) }}"
+                    class="textDecA">Dettagli</a></span></button>
+
     </div>
 </div>
-
