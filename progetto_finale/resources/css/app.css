@@ -7,19 +7,20 @@
 @import'search_button.css';
 @import'category.css';
 @import'create-article.css';
-
+@import'submit.css';
+@import'button.css';
 
 body {
     font-family: 'Belleza', sans-serif;
     background-color: black;
-    
-    
+
+
 
 }
 
 main {
     min-height: 90vh;
-    
+
 
 
 }
