@@ -1,0 +1,155 @@
+/* *{
+  padding:0;
+  margin:0;
+}
+
+.body-submit{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.card-submit{
+  width:320px;
+  height:400px;
+  position:relative;
+  cursor:pointer;
+}
+
+.card-submit .content{
+  width:100%;
+  height:100%;
+  background:rgba(255,255,255,0.089);
+  backdrop-filter:blur(20px);
+  border:1px solid #fff;
+  box-shadow:0 0 30px rgba(0,0,0,0.055);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  padding:10px;
+  border-radius:10px;
+  transition:all 2s;
+  overflow:hidden;
+  color:#fff;
+}
+
+.card-submit .content p{
+  font-size:14px;
+  padding:0.3em 1.5em;
+  text-align:center;
+}
+
+
+
+.card-submit:hover .content{
+  color:brown
+}
+
+.card-submit:before, .card-submit:after{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:50%;
+  background:#2b2b2b;
+  opacity: 0.8;
+  z-index:-20;
+  transition:all 0.5s;
+}
+
+.card-submit:before{
+  top:0;
+  right:0;
+}
+
+.card-submit:after{
+  bottom:0;
+  left:0;
+  background:#490000;
+}
+
+.card-submit:hover::before{
+  width:100px;
+  height:100px;
+  transform:translate(60px,-30px);
+  border-radius:50%;
+}
+
+.card-submit:hover::after{
+  width:100px;
+  height:100px;
+  transform:translate(-50px,60px);
+  border-radius:50%;
+} */
+
+*{
+  padding: 0;
+  margin: 0;
+}
+.body-submit{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-submit {
+--background: linear-gradient(to left, #32f72b 0%, #aa5d60 100%);
+width: 190px;
+height: 254px;
+padding: 5px;
+border-radius: 1rem;
+overflow: visible;
+background: #f7ba2b;
+background: var(--background);
+position: relative;
+z-index: 1;
+cursor: pointer;
+}
+
+.card-submit::after {
+position: absolute;
+content: "";
+top: 30px;
+left: 0;
+right: 0;
+z-index: -1;
+height: 100%;
+width: 100%;
+transform: scale(0.8);
+filter: blur(25px);
+background: #f7ba2b;
+background: var(--background);
+transition: opacity .5s;
+}
+
+.card-info-submit {
+--color: #000000;
+background: var(--color);
+color: var(--color);
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+overflow: visible;
+border-radius: .7rem;
+
+}
+
+.card-submit .title {
+font-weight: bold;
+letter-spacing: .1em;
+}
+
+/*Hover*/
+.card-submit:hover::after {
+opacity: 0;
+}
+
+.card-submit:hover .card-info-submit {
+color: #ffffff;
+transition: color 1s;
+}
