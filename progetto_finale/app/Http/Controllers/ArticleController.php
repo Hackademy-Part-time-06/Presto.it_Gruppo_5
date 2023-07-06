@@ -19,7 +19,7 @@ class ArticleController extends Controller
 
     //Search
     public function searchArticles(Request $request){
-        $searched = $request->searched;
+        $searched = ucfirst($request->searched);
         $categories = Category::all();
         foreach($categories as $category){
             if($searched == $category->name){
