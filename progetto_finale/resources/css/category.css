@@ -97,7 +97,9 @@
 }
 
 .containerCat .cardCat {
-  background-color: #fff;
+  background-color: rgb(227, 227, 227);
+  border-color: brown;
+  border-style: solid;
   border-radius: 40px;
   height: 10rem;
   padding: 2rem;
@@ -109,4 +111,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.scritta-categorie{
+  text-decoration: none;
+
+  color: brown;
 }

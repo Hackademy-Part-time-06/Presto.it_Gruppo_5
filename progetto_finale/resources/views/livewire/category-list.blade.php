@@ -9,9 +9,9 @@
 
                     @foreach ($categories as $category)
                         <div class="col-md-3 wrapper">
-                            <div class="cardCat mb-5"> <i class="icona bi bi-bag"></i>
+                            <div class="cardCat mb-5"> <i class="icona bi bi-bag fs-2"></i>
 
-                                <h5><a class="scritta"
+                                <h5><a class="scritta-categorie"
                                         href="{{ route('category.show', $category) }}">{{ $category->name }}</a>
                                 </h5>
                             </div>
