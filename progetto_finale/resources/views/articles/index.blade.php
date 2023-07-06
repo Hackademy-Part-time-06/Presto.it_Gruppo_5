@@ -7,6 +7,5 @@
         </form>
 
         <x-article-index-list :articles="$articles" />
-        
     </div>
 </x-main>

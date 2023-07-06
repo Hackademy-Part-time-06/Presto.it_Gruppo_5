@@ -20,7 +20,6 @@ class ArticleController extends Controller
     //Search
     public function searchArticles(Request $request){
         $articles = Article::search($request->searched)->where('is_accepted', true)->paginate(6);
-
         return view('articles.search', compact('articles'));
     }
 
