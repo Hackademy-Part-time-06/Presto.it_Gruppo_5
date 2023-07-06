@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -19,9 +17,18 @@ class ArticleController extends Controller
         $this->middleware('auth')->except('index', 'show');
     }
 
+    //Search
+    public function searchArticles(Request $request){
+        $articles = Article::search($request->searched)->where('is_accepted', true)->paginate(6);
+
+        return view('articles.search', compact('articles'));
+    }
+
     public function index()
     {
-        return view('articles.index');
+        //ordinati in ordine cronologico con una paginazione da 6 articoli
+        $articles = Article::where('is_accepted', true)->orderBy('created_at')->paginate(6);
+        return view('articles.index', compact('articles'));
     }
 
     /**
