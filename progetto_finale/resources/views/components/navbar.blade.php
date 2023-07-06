@@ -21,7 +21,8 @@
             </ul>
         </li>
 
-        <li><a href="{{ route('submit.revisor') }}">Lavora con noi</a></li>
+
+
 
 
 
@@ -39,6 +40,8 @@
                         </span>
                     </a>
                 </li>
+            @else
+                <li><a href="{{ route('submit.revisor') }}">Lavora con noi</a></li>
             @endif
         @endauth
 

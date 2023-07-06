@@ -39,8 +39,8 @@
                         </div>
                     </div>
                 </div>
-                @empty
-                <h1>non ci sono articoli correlati alla ricerca</h1>
+            @empty
+                <h1 class="text-white text-center">Non ci sono articoli correlati alla ricerca</h1>
             @endforelse
             {{ $articles->links() }}
         </div>

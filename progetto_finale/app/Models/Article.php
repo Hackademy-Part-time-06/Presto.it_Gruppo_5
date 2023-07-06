@@ -20,7 +20,7 @@ class Article extends Model
      */
     public function toSearchableArray()
     {
-        $category = $this->category_id;
+        $category = $this->category;
         $array = [
             'id' => $this->id,
             'title' => $this->title,
