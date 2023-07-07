@@ -51,7 +51,7 @@
                         <p>User: {{ $article->user_id }}</p>
                         <hr>
                         @auth
-                            @if ($article->id == Auth::user()->id)
+                            @if ($article->user_id == Auth::user()->id)
                                 <!-- Edit button -->
                                 <a href="{{ route('articles.edit', $article) }}"
                                     class="btn btn-outline-secondary text-info btn-sm m-3">Modifica</a>
