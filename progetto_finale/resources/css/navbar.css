@@ -131,7 +131,7 @@ nav {
 }
 
 #menu a.dropdown-arrow:after {
-    content: "\2B9F";
+    
     margin-left: 5px;
 }
 
