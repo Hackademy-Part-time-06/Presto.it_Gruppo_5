@@ -1,6 +1,3 @@
-
-
-
 <x-main>
     <div class="container bodyLogin mt-5 bodyRegister">
 
@@ -23,10 +20,10 @@
                         <!-- Background image for card set in CSS! -->
                     </div>
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Registrati qui</h5>
+                        <h5 class="card-title text-center mb-5 fw-light fs-4">Inserisci i dati richiesti</h5>
 
 
-                        <form action="{{ route('register') }}" method="POST">
+                        <form action="{{ route('form.revisor') }}" method="POST">
                             @method('POST')
                             @csrf
 
@@ -34,6 +31,16 @@
                                 <input type="name" class="form-control" id="floatingInputEmail" name="name"
                                     placeholder="Name">
                                 <label for="floatingInputEmail">Nome</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInputEmail" name="surname"
+                                    placeholder="Surname">
+                                <label for="floatingInputEmail">Cognome</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="number" class="form-control" id="floatingInputEmail" name="number"
+                                    placeholder="number">
+                                <label for="floatingInputEmail">Cellulare</label>
                             </div>
 
                             <div class="form-floating mb-3">
@@ -43,23 +50,27 @@
                             </div>
 
 
-
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                                    name="password">
-                                <label for="floatingPassword">Password</label>
+                                <input type="text" class="form-control" id="floatingInputEmail" name="city"
+                                    placeholder="Città">
+                                <label for="floatingInputEmail">Città</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                                    name="password_confirmation">
-                                <label for="floatingPassword">Conferma password</label>
+                                
+                                
+                                        <p class="mb-1 fs-5">Perchè vuoi lavorare con noi:</p> <textarea id="message" type="text" placeholder="Enter your message" name="message" class="form-control input-box rm-border"></textarea>
+                                    
+                               
                             </div>
+
 
 
                             <div class="d-grid mb-2">
-                                <button type="submit" class="btn btn-outline-success my-3">Registrati</button>
-                                <a class="btn btn-outline-info" href="{{ route('login') }}">Hai già un account?</a>
+                                <button type="submit" class=" btn btn-outline-primary  my-3"> <a class="text-dark "
+                                        href="{{ route('become.revisor') }}">Invio
+                                    </a></button>
+
                             </div>
 
                         </form>

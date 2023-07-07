@@ -7,6 +7,9 @@
             Nome: {{ $user->name }}
         </p>
         <p>
+            Cognome: {{ $user->surname }}
+        </p>
+        <p>
             Email: {{ $user->email }}
         </p>
         <p>

@@ -33,7 +33,7 @@
                                 <br>
 
                                 <a class="card-info-submit textNone card-info-submit2"
-                                    href="{{ route('become.revisor') }}">Clicca qui
+                                    href="{{ route('form.revisor') }}">Clicca qui
                                     per lavorare con noi</a>
 
 
