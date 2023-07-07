@@ -30,12 +30,21 @@
 
                             <p class="card-text">Descrizione: {{ $article->description }}</p>
 
+                            
                             <p class="card-text">Categoria: {{ $article->category->name }}</p>
+                            <!-- Details Button -->
                             <a href="{{ route('articles.show', $article) }}"
                                 class="btn btn-sm btn-outline-info">Dettagli</a>
-                            <a href="{{ route('articles.edit', $article) }}"
-                                class="btn btn-sm btn-outline-warning">Modifica</a>
-                            <livewire:article-delete-form :article="$article" />
+                            @auth
+                                @if($article->user_id == Auth::user()->id)
+                                    <!-- Edit button -->
+                                    <a href="{{ route('articles.edit', $article) }}"
+                                        class="btn btn-sm btn-outline-warning">Modifica</a>
+                                    <!-- Delete button -->
+                                    <livewire:article-delete-form :article="$article" />
+                                @endif
+                            @endauth        
+                                
                         </div>
                     </div>
                 </div>

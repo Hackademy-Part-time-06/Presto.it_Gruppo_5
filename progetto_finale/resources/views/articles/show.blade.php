@@ -50,9 +50,15 @@
                         <hr>
                         <p>User: {{ $article->user_id }}</p>
                         <hr>
-                        <a href="{{ route('articles.edit', $article) }}"
-                            class="btn btn-outline-secondary text-info btn-sm m-3">Modifica</a>
-                        <livewire:article-delete-form :article="$article" />
+                        @auth
+                            @if ($article->id == Auth::user()->id)
+                                <!-- Edit button -->
+                                <a href="{{ route('articles.edit', $article) }}"
+                                    class="btn btn-outline-secondary text-info btn-sm m-3">Modifica</a>
+                                <!-- Delete button -->
+                                <livewire:article-delete-form :article="$article" />
+                            @endif
+                        @endauth
                     </div>
                 </div>
             </div>
