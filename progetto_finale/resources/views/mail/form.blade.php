@@ -23,7 +23,7 @@
                         <h5 class="card-title text-center mb-5 fw-light fs-4">Inserisci i dati richiesti</h5>
 
 
-                        <form action="{{ route('form.revisor') }}" method="POST">
+                        <form action="{{ route('become.revisor') }}" method="POST">
                             @method('POST')
                             @csrf
 
@@ -59,7 +59,7 @@
                             <div class="form-floating mb-3">
                                 
                                 
-                                        <p class="mb-1 fs-5">Perchè vuoi lavorare con noi:</p> <textarea id="message" type="text" placeholder="Enter your message" name="message" class="form-control input-box rm-border"></textarea>
+                                        <p class="mb-1 fs-5">Perchè vuoi lavorare con noi:</p> <textarea id="message" type="text" placeholder="Enter your message" name="description" class="form-control input-box rm-border"></textarea>
                                     
                                
                             </div>
@@ -68,7 +68,7 @@
 
                             <div class="d-grid mb-2">
                                 <button type="submit" class=" btn btn-outline-primary  my-3"> <a class="text-dark "
-                                        href="{{ route('become.revisor') }}">Invio
+                                        >Invio
                                     </a></button>
 
                             </div>

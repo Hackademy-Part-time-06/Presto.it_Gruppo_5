@@ -2,14 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Image extends Model
 {
     use HasFactory;
 
+    protected $fillable=['path'];
+
     public function article(){
-        return $this->belongsTo(Image::class);
+        return $this->belongsTo(Article::class); //relazione 1 to N le immagini appartengono ad un articolo
     }
 }

@@ -10,7 +10,16 @@
             Cognome: {{ $user->surname }}
         </p>
         <p>
+            Cellulare: {{ $user->number }}
+        </p>
+        <p>
             Email: {{ $user->email }}
+        </p>
+        <p>
+            Città: {{ $user->city }}
+        </p>
+        <p>
+            Descrizione: {{ $user->description  }}
         </p>
         <p>
             Clicca qui per renderlo revisore:
