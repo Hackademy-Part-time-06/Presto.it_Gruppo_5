@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Image;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
@@ -41,7 +42,7 @@ class Article extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class); //un annuncio può avere piu immagini
     }
 
     public function setAccepted($value)

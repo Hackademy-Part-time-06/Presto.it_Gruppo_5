@@ -6,11 +6,16 @@ use Livewire\Component;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
 
 class ArticleCreateForm extends Component
 {
+    use WithFileUploads;
     //Attributi
-    public $user_id, $category_id, $title, $price, $description;    
+    public $user_id, $category_id, $title, $price, $description,$image,$temporary_images, $images = [];
+    //con temporary_images carico le img che con il submit mi andranno nell array images
+    
+
 
     //Validazione
     protected $rules = [
@@ -18,12 +23,19 @@ class ArticleCreateForm extends Component
         'title'            => 'required|min:4',
         'price'            => 'required|numeric',
         'description'      => 'required|min:8',
+        'images.*' => 'image|max:1024',
+        'temporary_images.*' => 'image|max:1024',
     ];
 
     protected $messages = [
         'required'=>'Il campo :attribute è richiesto',
         'min'     =>'Il campo :attribute è troppo corto',
-        'numeric' =>'Il campo :attribute deve essere di tipo numerico'
+        'numeric' =>'Il campo :attribute deve essere di tipo numerico',
+        'temporary_images.required'=> "L'immagine è richiesta",
+        'temporary_images.*.image'=> "Il file deve essere un' immagine",
+        'temporary_images.*.max'=> "L'immagine deve essere di 1 mb",
+        'images.image'=> "Il file deve essere un' immagine",
+        'images.max'=> "L'immagine deve essere di 1 mb",
     ];
     
     public function store(){
