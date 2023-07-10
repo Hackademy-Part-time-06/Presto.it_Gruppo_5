@@ -11,7 +11,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="text-center p-3">
-                            <h2 class="section-heading text-uppercase">I nostri ultimi articoli</h2>
+                            <h2 class="section-heading text-uppercase">{{ __('messages.allAnnouncements') }}</h2>
                             <h3 class="section-subheading">Non perderti le offerte.</h3>
                         </div>
                     </div>

@@ -18,11 +18,12 @@ class ArticleController extends Controller
     }
 
     //Search
-    public function searchArticles(Request $request){
+    public function searchArticles(Request $request)
+    {
         $searched = ucfirst($request->searched);
         $categories = Category::all();
-        foreach($categories as $category){
-            if($searched == $category->name){
+        foreach ($categories as $category) {
+            if ($searched == $category->name) {
                 $searched = $category->id;
             }
         }
@@ -87,9 +88,9 @@ class ArticleController extends Controller
 
     public function categoryshow(Category $category)
     {
-        $articles=Article::where('is_accepted', true)->where('category_id',$category->id)->get();
-       
-        return view('articles.categoryshow', compact('category','articles'));
+        $articles = Article::where('is_accepted', true)->where('category_id', $category->id)->get();
+
+        return view('articles.categoryshow', compact('category', 'articles'));
     }
 
     public function userprofile()
@@ -102,5 +103,11 @@ class ArticleController extends Controller
     {
         $articles = Article::where('is_accepted', true)->paginate(6);
         return view('articles.index', compact('articles'));
+    }
+
+    public function setLanguage($lang)
+    {
+        session()->put('locale', $lang);
+        return redirect()->back();
     }
 }

@@ -43,8 +43,12 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 
 
 //Search
-Route::get('/ricerca/articolo', [ArticleController::class , 'searchArticles'])->name('articles.search');
+Route::get('/ricerca/articolo', [ArticleController::class, 'searchArticles'])->name('articles.search');
 //rotta per la vista al form che rimanda all'email
-Route::get('/clicca/form', [RevisorController::class , 'formRevisor'])->name('form.revisor');
+Route::get('/clicca/form', [RevisorController::class, 'formRevisor'])->name('form.revisor');
 //rotta per la vista all'email
-Route::get('/clicca/revisore', [RevisorController::class , 'submitRevisor'])->name('submit.revisor');
+Route::get('/clicca/revisore', [RevisorController::class, 'submitRevisor'])->name('submit.revisor');
+
+
+//*Cambio lingua
+Route::post('/lingua/{lang}', [ArticleController::class, 'setLanguage'])->name('set_language_locale');

@@ -75,14 +75,17 @@
 
                     </ul>
 
-                <li><a class='dropdown-arrow' href='#'><i class="bi bi-globe"></i><i
+                <li><a class='dropdown-arrow m-0' href=''><i class="bi bi-globe"></i><i
                             class="ms-2 bi bi-caret-down"></i> </a>
                     <ul class='sub-menus'>
-                        {{-- <li>
+                        <li>
                             <x-_locale lang='it' nation='it' />
-                        </li> --}}
-                        <li><a href="#">IT</a></li>
-                        <li><a href="#">EN</a></li>
+                        </li>
+                        <li>
+                            <x-_locale lang='gb' nation='gb' />
+                        </li>
+                        {{-- <li><a href="#">IT</a></li>
+                        <li><a href="#">EN</a></li> --}}
 
 
                     </ul>
