@@ -44,6 +44,7 @@ Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])-
 
 //Search
 Route::get('/ricerca/articolo', [ArticleController::class, 'searchArticles'])->name('articles.search');
+Route::get('category/search/', [ArticleController::class, 'categorysearch'])->name('category.search');
 //rotta per la vista al form che rimanda all'email
 Route::get('/clicca/form', [RevisorController::class, 'formRevisor'])->name('form.revisor');
 //rotta per la vista all'email

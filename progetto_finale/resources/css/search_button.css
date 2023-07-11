@@ -1,12 +1,20 @@
 .search-box{
-    position: relative;
-    top: 50px;
-    left: 10px;
-    height: 30px;
-    border-radius: 30px;
-    width: 250px;
+    
+    top: 50%;
+   
+   
 }
 
+.search-position-scritta{
+position: absolute;
+bottom: 90%;
+color: white;
+}
+
+.search-position-box{
+    position: relative;
+
+}
 
 
 
