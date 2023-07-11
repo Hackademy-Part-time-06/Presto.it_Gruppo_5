@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="text-center p-3">
                             <h2 class="section-heading text-uppercase">{{ __('messages.allAnnouncements') }}</h2>
-                            <h3 class="section-subheading">Non perderti le offerte.</h3>
+                            <h3 class="section-subheading">{{ __('messages.allOffers') }}</h3>
                         </div>
                     </div>
                     <div class="row">

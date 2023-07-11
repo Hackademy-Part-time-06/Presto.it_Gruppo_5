@@ -1,7 +1,7 @@
 <section>
     <div class="">
         <div class="text-center p-3">
-            <h2 class="section-heading">Esplora le nostre categorie</h2>
+            <h2 class="section-heading">{{ __('messages.categoriesTitle') }}</h2>
         </div>
         <div class="text-center">
             <div class="container-fluid containerCat">
@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    
-    
+
+
 
 </section>

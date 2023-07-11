@@ -5,9 +5,9 @@
             <h3>{{ $latestarticle->title }}</h3>
             <hr>
         </h4>
-        <p class="card-text">Prezzo: {{ $latestarticle->price }}</p>
-        <p class="card-text">Categoria: {{ $latestarticle->category->name }}</p>
+        <p class="card-text">{{ __('messages.price') }} {{ $latestarticle->price }}</p>
+        <p class="card-text">{{ __('messages.category') }} {{ $latestarticle->category->name }}</p>
         <button class="custom-btn btn-6 ps-3 pe-3"><span><a href="{{ route('articles.show', $latestarticle) }}"
-            class="textDecA">Dettagli</a></span></button>
+                    class="textDecA">{{ __('messages.detailsBtn') }}</a></span></button>
     </div>
 </div>

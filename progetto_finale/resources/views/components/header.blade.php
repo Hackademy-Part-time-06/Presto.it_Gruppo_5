@@ -12,8 +12,8 @@
 
 
             <div class="pos-div2 d-flex text-center align-items-center">
-                <div class="w-100 ">
-                    <h1 class="display-3 scritta-heading">Acquista nel mondo del domani, oggi.</h1>
+                <div class="w-100">
+                    <h1 class="display-3 scritta-heading">{{ __('messages.headerTitle') }}</h1>
                 </div>
             </div>
         </div>

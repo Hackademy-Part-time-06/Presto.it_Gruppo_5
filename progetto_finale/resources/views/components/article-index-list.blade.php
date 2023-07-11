@@ -26,30 +26,30 @@
                                 <h3>{{ $article->title }}</h3>
                                 <hr>
                             </h4>
-                            <p class="card-text">Prezzo: {{ $article->price }}</p>
+                            <p class="card-text">{{ __('messages.price') }} {{ $article->price }}</p>
 
-                            <p class="card-text">Descrizione: {{ $article->description }}</p>
+                            <p class="card-text">{{ __('messages.description') }} {{ $article->description }}</p>
 
-                            
-                            <p class="card-text">Categoria: {{ $article->category->name }}</p>
+
+                            <p class="card-text">{{ __('messages.category') }} {{ $article->category->name }}</p>
                             <!-- Details Button -->
                             <a href="{{ route('articles.show', $article) }}"
-                                class="btn btn-sm btn-outline-info">Dettagli</a>
+                                class="btn btn-sm btn-outline-info">{{ __('messages.detailsBtn') }}</a>
                             @auth
-                                @if($article->user_id == Auth::user()->id)
+                                @if ($article->user_id == Auth::user()->id)
                                     <!-- Edit button -->
                                     <a href="{{ route('articles.edit', $article) }}"
-                                        class="btn btn-sm btn-outline-warning">Modifica</a>
+                                        class="btn btn-sm btn-outline-warning">{{ __('messages.modifying') }}</a>
                                     <!-- Delete button -->
                                     <livewire:article-delete-form :article="$article" />
                                 @endif
-                            @endauth        
-                                
+                            @endauth
+
                         </div>
                     </div>
                 </div>
             @empty
-                <h1 class="text-white text-center">Non ci sono articoli correlati alla ricerca</h1>
+                <h1 class="text-white text-center">{{ __('messages.searchError') }}</h1>
             @endforelse
             {{ $articles->links() }}
         </div>
