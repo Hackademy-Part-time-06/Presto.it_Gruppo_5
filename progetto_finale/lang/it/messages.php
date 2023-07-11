@@ -34,4 +34,17 @@ return [
     // categories
     'categoriesTitle' => 'Esplora le nostre categorie',
 
+    // login
+    'login' => 'Login',
+    'emailAddress' => 'Indirizzo email',
+    'password' => 'Password',
+    'acess' => 'Accedi',
+    'notRegisterMsg' => 'Non sei ancora registrato?',
+
+    // Register
+    'registerName' => 'Nome',
+    'confirmPassword' => 'Conferma password',
+    'registerBtn' => 'Registrati',
+    'accountBtn?' => 'Hai già un account?',
+
 ];

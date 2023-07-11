@@ -1,7 +1,3 @@
-
-
-
-
 <x-main>
     <div class="container bodyLogin mt-5">
         @if ($errors->any())
@@ -20,7 +16,7 @@
                         <!-- Background image for card set in CSS! -->
                     </div>
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Login</h5>
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">{{ __('messages.login') }}</h5>
                         {{-- 
                         <div class="alert alert-danger">
                             <ul>
@@ -37,7 +33,7 @@
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputEmail"
                                     placeholder="name@example.com" name="email">
-                                <label for="floatingInputEmail">Email address</label>
+                                <label for="floatingInputEmail">{{ __('messages.emailAddress') }}</label>
                             </div>
 
                             <hr>
@@ -45,13 +41,14 @@
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password">
-                                <label for="floatingPassword">Password</label>
+                                <label for="floatingPassword">{{ __('messages.password') }}</label>
                             </div>
 
 
                             <div class="d-grid mb-2">
-                                <button type="submit" class="btn btn-outline-success my-3">Accedi</button>
-                                <a href="{{ route('register') }}">Non sei ancora registrato?</a>
+                                <button type="submit"
+                                    class="btn btn-outline-success my-3">{{ __('messages.acess') }}</button>
+                                <a href="{{ route('register') }}">{{ __('messages.notRegisterMsg') }}</a>
                             </div>
 
                         </form>

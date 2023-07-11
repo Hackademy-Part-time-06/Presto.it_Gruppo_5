@@ -1,6 +1,3 @@
-
-
-
 <x-main>
     <div class="container bodyLogin mt-5 bodyRegister">
 
@@ -33,13 +30,13 @@
                             <div class="form-floating mb-3">
                                 <input type="name" class="form-control" id="floatingInputEmail" name="name"
                                     placeholder="Name">
-                                <label for="floatingInputEmail">Nome</label>
+                                <label for="floatingInputEmail">{{ __('messages.registerName') }}</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputEmail"
                                     placeholder="name@example.com" name="email">
-                                <label for="floatingInputEmail">Email</label>
+                                <label for="floatingInputEmail">{{ __('messages.emailAddress') }}</label>
                             </div>
 
 
@@ -47,19 +44,21 @@
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password">
-                                <label for="floatingPassword">Password</label>
+                                <label for="floatingPassword">>{{ __('messages.password') }}</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password_confirmation">
-                                <label for="floatingPassword">Conferma password</label>
+                                <label for="floatingPassword">{{ __('messages.confirmPassword') }}</label>
                             </div>
 
 
                             <div class="d-grid mb-2">
-                                <button type="submit" class="btn btn-outline-success my-3">Registrati</button>
-                                <a class="btn btn-outline-info" href="{{ route('login') }}">Hai già un account?</a>
+                                <button type="submit"
+                                    class="btn btn-outline-success my-3">{{ __('messages.registerBtn') }}</button>
+                                <a class="btn btn-outline-info"
+                                    href="{{ route('login') }}">{{ __('messages.accountBtn') }}</a>
                             </div>
 
                         </form>

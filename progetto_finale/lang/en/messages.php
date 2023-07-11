@@ -31,4 +31,17 @@ return [
     'searchError' => 'There are no research-related announcements',
     'deleteBtn' => 'Delete',
     'categoriesTitle' => 'Explore our categories',
+
+    // login
+    'login' => 'Login',
+    'emailAddress' => 'Email Address',
+    'password' => 'Password',
+    'acess' => 'Login',
+    'notRegisterMsg' => 'Not registered yet?',
+
+    // Register
+    'registerName' => 'Name',
+    'confirmPassword' => 'Password confirmation',
+    'registerBtn' => 'Register',
+    'accountBtn?' => 'Already have an account?',
 ];

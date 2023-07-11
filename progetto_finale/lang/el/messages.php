@@ -31,4 +31,17 @@ return [
     'searchError' => 'Δεν υπάρχουν διαφημίσεις σχετικές με την αναζήτηση',
     'deleteBtn' => 'Διαγραφή',
     'categoriesTitle' => 'Εξερευνήστε τις κατηγορίες μας',
+
+    // login
+    'login' => 'Σύνδεση',
+    'emailAddress' => 'Email',
+    'password' => 'κωδικός πρόσβασης',
+    'acess' => 'Σύνδεση',
+    'notRegisterMsg' => 'Δεν έχετε εγγραφεί ακόμα;',
+
+    // Register
+    'registerName' => 'όνομα',
+    'confirmPassword' => 'Επιβεβαίωση κωδικού',
+    'registerBtn' => 'Εγγραφή',
+    'accountBtn?' => 'Έχετε ήδη λογαριασμό;',
 ];
