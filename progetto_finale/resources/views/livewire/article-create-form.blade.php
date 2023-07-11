@@ -21,6 +21,8 @@
                                         <form wire:submit.prevent="store">
                                             @csrf
 
+
+
                                             <div class="form-group">
                                                 <label for="input-description" class="form-label">Categoria</label>
                                                 <select class="form-select mb-3 form-style"
@@ -32,6 +34,32 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+
+                                            <div class="mb-3 form-group">
+                                                <label for="input-image" class="form-label">Immagini</label>
+                                                <input name="images" class="form-style" type="file" wire:model="temporary_images" multiple />        
+                                                <!-- Messaggio di errore -->
+                                                @error('temporary_images.*')
+                                                    <span class="error">{{ $message }}</span>
+                                                @enderror
+                                            </div>
+                                            {{-- se l'immagine non è vuota --}}
+                                            @if (!empty($images))
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <p> Photo Preview: </p>
+                                                        <div class="row border border-4 border-info rounded shadow py-4">
+                                                            @foreach ($images as $array => $image)
+                                                             <div class="col my-3" >  
+                                                            
+                                                            <img class="img-fluid" src="{{ $image->temporaryUrl() }}">
+                                                            <button type="button" class="btn btn-danger" wire:click="destroy({{ $image }})">Cancella</button>
+                                                             </div>
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endif
 
                                             <div class="mb-3 form-group">
                                                 <label for="input-title" class="form-label">Nome prodotto</label>

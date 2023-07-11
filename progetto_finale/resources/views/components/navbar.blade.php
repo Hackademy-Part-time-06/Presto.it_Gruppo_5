@@ -51,7 +51,8 @@
             <div class="justify-content-end px-3">
                 <li>
 
-                    <a class="dropdown-arrow ms-2 " href="#" > Benvenut* @auth {{ Auth::user()->name }} <i class="bi bi-caret-down"></i> 
+                    <a class="dropdown-arrow ms-2 " href="#"> Benvenut* @auth {{ Auth::user()->name }} <i
+                                class="bi bi-caret-down"></i>
                         @else
                         Guest @endauth
                     </a>
@@ -74,10 +75,17 @@
 
                     </ul>
 
-                <li><a class='dropdown-arrow' href='#'><i class="bi bi-globe"></i><i class="ms-2 bi bi-caret-down"></i> </a>
+                <li><a class='dropdown-arrow m-0' href=''><i class="bi bi-globe"></i><i
+                            class="ms-2 bi bi-caret-down"></i> </a>
                     <ul class='sub-menus'>
-                        <li><a href="#">IT</a></li>
-                        <li><a href="#">EN</a></li>
+                        <li>
+                            <x-_locale lang='it' nation='it' />
+                        </li>
+                        <li>
+                            <x-_locale lang='gb' nation='gb' />
+                        </li>
+                        {{-- <li><a href="#">IT</a></li>
+                        <li><a href="#">EN</a></li> --}}
 
 
                     </ul>

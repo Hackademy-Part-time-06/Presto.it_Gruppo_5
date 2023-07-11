@@ -32,13 +32,21 @@ class RevisorController extends Controller
         return redirect()->back()->with('message', 'Hai rifiutato l\'annuncio');
     }
 
-    public function becomeRevisor()
+    public function becomeRevisor(Request $request)
     {
+        $user = Auth::user();
+        $user->surname = $request->surname;
+        $user->number = $request->number;
+        $user->city = $request->city;
+        $user->description = $request->description;
+
+        $user->save();
+
+
         Mail::to('admin@presto.it')->send(new becomeRevisor(Auth::user()));
         return redirect()
             ->back()
             ->with('success', "complimenti la richiesta è stata inoltrata con successo");
-            
     }
     public function makeRevisor(User $user)
     {
@@ -48,12 +56,12 @@ class RevisorController extends Controller
 
     public function formRevisor()
     {
-        
+
         return view('mail.form');
     }
     public function submitRevisor()
     {
-        
+
         return view('mail.submit');
     }
 }

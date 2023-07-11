@@ -37,14 +37,18 @@ Route::patch('/accetta/annuncio/{article}', [RevisorController::class, 'acceptAr
 //*Rifiuta annuncio
 Route::patch('/rifiuta/annuncio/{article}', [RevisorController::class, 'rejectArticle'])->middleware('isRevisor')->name('revisor.reject_article');
 //*Diventa un revisore proteggo la rotta perchè invio i dati del tizio, quindi deve per forza fare un login
-Route::get('/diventa/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+Route::post('/diventa/revisore', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 //*Rendi l'utente revisore
 Route::get('/rendi/revisore/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 
 //Search
-Route::get('/ricerca/articolo', [ArticleController::class , 'searchArticles'])->name('articles.search');
+Route::get('/ricerca/articolo', [ArticleController::class, 'searchArticles'])->name('articles.search');
 //rotta per la vista al form che rimanda all'email
-Route::get('/clicca/form', [RevisorController::class , 'formRevisor'])->name('form.revisor');
+Route::get('/clicca/form', [RevisorController::class, 'formRevisor'])->name('form.revisor');
 //rotta per la vista all'email
-Route::get('/clicca/revisore', [RevisorController::class , 'submitRevisor'])->name('submit.revisor');
+Route::get('/clicca/revisore', [RevisorController::class, 'submitRevisor'])->name('submit.revisor');
+
+
+//*Cambio lingua
+Route::post('/lingua/{lang}', [ArticleController::class, 'setLanguage'])->name('set_language_locale');

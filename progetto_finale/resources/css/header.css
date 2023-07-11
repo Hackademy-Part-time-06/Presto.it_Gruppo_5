@@ -42,18 +42,18 @@
 
 
 
-header {
+/* header {
   position: relative;
   background-color: black;
   height: 75vh;
-  min-height: 25rem;
+  min-height: 30rem;
   width: 100%;
   overflow: hidden;
 
 
 
-}
-
+} */
+/*
 header video {
   position: absolute;
   top: 50%;
@@ -82,9 +82,9 @@ header .container {
 		border-image-slice: 5;
 		padding: 5px 20px;
   
-}
+} */
 
-header .overlay {
+/* header .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -95,3 +95,39 @@ header .overlay {
   z-index: 1;
 }
 
+ */ 
+
+  .bordo-img {
+  
+ 
+  border: solid 3px;
+		border-image-source: linear-gradient(to top left, #fe1d17, #0a03f9);
+		border-image-slice: 5;
+		padding: 5px 20px;
+    
+}
+
+.img-header{
+
+  opacity: 0.8;
+  
+}
+
+.pos-div{
+  position: relative;
+}
+
+.pos-div2{
+  position: absolute;
+ bottom: 30px;
+ left: 80px;
+ text-align: center;
+
+ 
+
+}
+.scritta-heading{
+  color: rgb(210, 212, 221);
+  
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}

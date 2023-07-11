@@ -18,7 +18,7 @@
         <div class="row">
             @foreach ($articles as $article)
                 <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
+                    <div class="card h-100 box_shadow wrapper">
                         <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400"
                                 alt=""></a>
                         <div class="card-body">
@@ -73,4 +73,4 @@
         </li>
     </ul> --}}
     </div>
-    <!-- /.container -->
+</div> <!-- /.container -->
