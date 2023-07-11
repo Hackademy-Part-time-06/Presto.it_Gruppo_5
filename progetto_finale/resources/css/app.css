@@ -9,6 +9,7 @@
 @import'create-article.css';
 @import'submit.css';
 @import'button.css';
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 
 body {
@@ -16,7 +17,7 @@ body {
     background-color: black;
 
 
-    
+
 }
 
 main {

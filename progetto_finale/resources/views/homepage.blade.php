@@ -1,7 +1,4 @@
 <x-main>
-
-
-
     <x-header />
 
     <div class="container">
@@ -28,7 +25,9 @@
                     <livewire:category-list />
 
                 </div>
-
             </section>
+
+        </div>
+    </div>
 
 </x-main>

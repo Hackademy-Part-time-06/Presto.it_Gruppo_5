@@ -3,7 +3,8 @@
     <ul>
         <li><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
                 href="{{ route('home') }}">Home</a></li>
-        <li><a class='dropdown-arrow' href='#'>Articoli <i class="bi bi-caret-down"></i> </a>
+        <li><a class='dropdown-arrow' href='#'>{{ __('messages.navAnnouncements') }} <i
+                    class="bi bi-caret-down"></i> </a>
             <ul class='sub-menus'>
                 <li><a href="{{ route('articles.index') }}">Articoli inseriti</a></li>
                 <li><a href="{{ route('articles.create') }}">Inserisci un articolo</a></li>
