@@ -47,6 +47,7 @@ class ArticleCreateForm extends Component
             }
         }
     }
+    
     //Permette di rimuovere l'immagine dall'array images in base alla chiave dell'immagine passata 
     public function removeImage($key){
         if(in_array($key, array_keys($this->images))){
