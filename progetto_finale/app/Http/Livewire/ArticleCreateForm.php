@@ -12,18 +12,18 @@ class ArticleCreateForm extends Component
 {
     use WithFileUploads;
     //Attributi
-    public $user_id, $category_id, $title, $price, $description,$image,$temporary_images, $images = [];
+    public $user_id, $category_id, $title, $price, $description, $temporary_images, $images = [];
     //con temporary_images carico le img che con il submit mi andranno nell array images
-    
+    public $article;
 
 
     //Validazione
     protected $rules = [
-        'category_id'      => 'required',
-        'title'            => 'required|min:4',
-        'price'            => 'required|numeric',
-        'description'      => 'required|min:8',
-        'images.*' => 'image|max:1024',
+        'category_id'        => 'required',
+        'title'              => 'required|min:4',
+        'price'              => 'required|numeric',
+        'description'        => 'required|min:8',
+        'images.*'           => 'image|max:1024',
         'temporary_images.*' => 'image|max:1024',
     ];
 
@@ -37,21 +37,55 @@ class ArticleCreateForm extends Component
         'images.image'=> "Il file deve essere un' immagine",
         'images.max'=> "L'immagine deve essere di 1 mb",
     ];
+
+    public function updatedTemporaryImages(){
+        if($this->validate([
+            'temporary_images.*' => 'image|max:1024',
+        ])){
+            foreach($this->temporary_images as $image){
+                $this->images[] = $image;
+            }
+        }
+    }
+    //Permette di rimuovere l'immagine dall'array images in base alla chiave dell'immagine passata 
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
+    }
     
     public function store(){
 
         $this->validate();
-
-        Article::create([         
-                            //Ottengo l'id dell'user
+        
+        $category = Category::find($this->category_id);
+        
+        $this->article = $category->articles()->create([
+            //Ottengo l'id dell'user
             'user_id'       => Auth::user()->id,
-            'category_id'   => $this->category_id,
             'title'         => $this->title,
             'price'         => $this->price,
             'description'   => $this->description,
         ]);
+        if(count($this->images)){
+            foreach($this->images as $image){
+                $this->article->images()->create(
+                    ['path'=>$image->store('images', 'public')]
+                );
+            }
+        }
+        /*
+        $category->articles()->create([
+                             //Ottengo l'id dell'user
+            'user_id'       => Auth::user()->id,
+            'title'         => $this->title,
+            'price'         => $this->price,
+            'description'   => $this->description,
+        ]);
+        */
         
-        $this->reset('user_id','category_id','title','price','description');
+
+        $this->reset('user_id','category_id','title','price','description','images','temporary_images');
         
         session()->flash('article', 'Articolo inserito correttamente');
         /*

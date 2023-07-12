@@ -15,17 +15,15 @@
                                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                                     aria-label="Slide 3"></button>
                             </div>
-                            <div class="carousel-inner" style="height: 450px;">
-                                <div class="carousel-item active">
-                                    <img class="img-fluid" src="/media/lavandino.jpeg" alt="..." />
+                            @if ($article->images)
+                                <div class="carousel-inner" style="height: 450px;">
+                                    @foreach ($article->images as $image)
+                                        <div class="carousel-item @if($loop->first) active @endif">
+                                            <img class="img-fluid" src="{{Storage::url($image->path)}}" alt="..." />
+                                        </div>
+                                    @endforeach
                                 </div>
-                                <div class="carousel-item">
-                                    <img class="img-fluid" src="/media/lavandino.jpeg" alt="..." />
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="img-fluid" src="/media/lavandino.jpeg" alt="..." />
-                                </div>
-                            </div>
+                            @endif
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,8 +57,9 @@
                                 <livewire:article-delete-form :article="$article" />
                             @endif
                         @endauth
+                        
                     </div>
                 </div>
             </div>
-        
+            
 </x-main>

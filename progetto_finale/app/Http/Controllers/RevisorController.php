@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Mail\becomeRevisor;
 use App\Models\Article;
-use App\Models\User;
 use Illuminate\Http\Request;
 use App\View\Components\Main;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Models\User;
 
 class RevisorController extends Controller
 {
