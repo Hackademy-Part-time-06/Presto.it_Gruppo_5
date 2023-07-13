@@ -1,5 +1,10 @@
 <div class="card h-100">
-    <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>
+    <a href="#"><img class="card-img-top" 
+        src="@if(!empty($latestarticle->images))
+                {{Storage::url($latestarticle->images[0]->path)}}
+                @else 
+                    https://via.placeholder.com/700x400 
+                @endif" alt="Article-image"></a>
     <div class="card-body">
         <h4 class="card-title">
             <h3>{{ $latestarticle->title }}</h3>
