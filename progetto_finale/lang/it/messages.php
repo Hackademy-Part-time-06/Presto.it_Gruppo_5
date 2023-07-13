@@ -46,4 +46,27 @@ return [
     'confirmPassword' => 'Conferma password',
     'registerBtn' => 'Registrati',
     'accountBtn?' => 'Hai già un account?',
+    'register' => 'Registrati qui',
+
+    // Revisor
+    'revAccept' => 'Accetta',
+    'revReject' => 'Rifiuta',
+    'revMessage' => 'Complimenti! Ora sei un revisore',
+    'revRequest' => 'Complimenti! La richiesta è stata inoltrata con successo',
+
+    // create
+    'createTitle' => 'Inserisci il tuo annuncio qui!',
+    'allCategories' => 'Tutte le categorie',
+    'prodName' => 'Nome prodotto',
+    'insertImg' => 'Immagini',
+    'createBtn' => 'Crea',
+
+    // edit
+    'editTitle' => 'Modifica il tuo annuncio qui!',
+    'photoPreview' => 'Anteprima foto',
+    'editBtn' => 'Modifica',
+    'deleteBtn' => 'Cancella',
+
+
+
 ];

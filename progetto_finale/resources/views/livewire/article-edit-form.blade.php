@@ -8,7 +8,7 @@
                             <div class="card-front">
                                 <div class="center-wrap">
                                     <div class="section text-center">
-                                        <h4 class="mb-4 pb-3">Inserisci il tuo articolo qui!</h4>
+                                        <h4 class="mb-4 pb-3">{{ __('messages.editTitle') }}</h4>
 
                                         @if (session()->has('article'))
                                             <div class="alert alert-success text-center">
@@ -22,10 +22,11 @@
                                             @csrf
 
                                             <div class="form-group">
-                                                <label for="input-description" class="form-label">Categoria</label>
+                                                <label for="input-description"
+                                                    class="form-label">{{ __('messages.category') }}</label>
                                                 <select class="form-select mb-3 form-style"
                                                     aria-label="Default select example" wire:model.defer="category_id">
-                                                    <option selected>Tutte le categorie</option>
+                                                    <option selected>{{ __('messages.allCategories') }}</option>
                                                     @foreach ($categories as $category)
                                                         <option value="{{ $category->id }}">{{ $category->name }}
                                                         </option>
@@ -34,7 +35,8 @@
                                             </div>
 
                                             <div class="mb-3 form-group">
-                                                <label for="input-title" class="form-label">Nome prodotto</label>
+                                                <label for="input-title"
+                                                    class="form-label">{{ __('messages.prodName') }}</label>
                                                 <!-- wire.model.lazy fa si che la chiamata parta solo quando il focus viene spostato dall'input -->
                                                 <input type="text"
                                                     class="form-style @error('title') is-invalid @enderror"
@@ -48,7 +50,7 @@
 
                                             <div class="mb-3 form-group">
                                                 <label for="input-price"
-                                                    class="form-label @error('price') is-invalid @enderror">Prezzo</label>
+                                                    class="form-label @error('price') is-invalid @enderror">{{ __('messages.price') }}</label>
                                                 <input type="number" step="0.1" class="form-style"
                                                     wire:model.lazy="price" id="input-price"
                                                     value="{{ old('price') }}">
@@ -61,7 +63,7 @@
                                             <div class="mb-3 form-group">
                                                 <!-- wire.model.debounce.Xms fa si che la chiamata parta in base al timing impostato in millisecondi -->
                                                 <label for="input-description"
-                                                    class="form-label @error('description') is-invalid @enderror">Descrizione</label>
+                                                    class="form-label @error('description') is-invalid @enderror">{{ __('messages.description') }}</label>
                                                 <textarea class="form-style" wire:model.debounce.1000ms="description" id="input-description"
                                                     value="{{ old('description') }}" rows="7"></textarea>
                                                 <!-- Messaggio di errore -->
@@ -73,8 +75,10 @@
 
                                             <!-- Edit Immagini  -->
                                             <div class="mb-3 form-group">
-                                                <label for="input-image" class="form-label">Immagini</label>
-                                                <input wire:model="temporary_images" name="images" class="form-style" type="file" multiple />        
+                                                <label for="input-image"
+                                                    class="form-label">{{ __('messages.insertImg') }}</label>
+                                                <input wire:model="temporary_images" name="images" class="form-style"
+                                                    type="file" multiple />
                                                 <!-- Messaggio di errore -->
                                                 @error('temporary_images.*')
                                                     <span class="error">{{ $message }}</span>
@@ -84,22 +88,27 @@
                                             @if (!empty($images))
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <p> Photo Preview: </p>
-                                                        <div class="row border border-4 border-info rounded shadow py-4">
+                                                        <p> {{ __('messages.photoPreview') }} </p>
+                                                        <div
+                                                            class="row border border-4 border-info rounded shadow py-4">
                                                             @foreach ($images as $key => $image)
-                                                             <div class="col my-3" > 
-                                                                <div class="mx-auto shadow rounded">
-                                                                    <img src="{{Storage::url($image->path)}}" alt="Immagine">
+                                                                <div class="col my-3">
+                                                                    <div class="mx-auto shadow rounded">
+                                                                        <img src="{{ Storage::url($image->path) }}"
+                                                                            alt="Immagine">
+                                                                    </div>
+                                                                    <button type="button"
+                                                                        class="btn btn-danger shadow text-center mt-2 mx-auto"
+                                                                        wire:click="removeImage({{ $key }})">{{ __('messages.deleteBtn') }}</button>
                                                                 </div>
-                                                                <button type="button" class="btn btn-danger shadow text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
-                                                             </div>
                                                             @endforeach
                                                         </div>
                                                     </div>
                                                 </div>
                                             @endif
 
-                                            <button type="submit" class="btn btn-warning">Modifica</button>
+                                            <button type="submit"
+                                                class="btn btn-warning">{{ __('messages.editBtn') }}</button>
 
                                         </form>
 

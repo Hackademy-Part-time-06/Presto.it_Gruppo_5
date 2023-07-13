@@ -44,4 +44,25 @@ return [
     'confirmPassword' => 'Password confirmation',
     'registerBtn' => 'Register',
     'accountBtn?' => 'Already have an account?',
+    'register' => 'Register here',
+
+    // Revisor
+    'revAccept' => 'Accept',
+    'revReject' => 'Reject',
+    'revMessage' => 'Congratulations! You are now an auditor',
+    'revRequest' => 'Congratulations! Your request has been successfully submitted',
+
+    // create
+    'createTitle' => 'Place your ad here!',
+    'allCategories' => 'All categories',
+    'prodName' => 'Product name',
+    'insertImg' => 'Images',
+    'createBtn' => 'Create',
+
+    // edit
+    'editTitle' => 'Edit your ad here!',
+    'photoPreview' => 'Photo preview',
+    'editBtn' => 'Edit',
+    'deleteBtn' => 'Delete',
+
 ];

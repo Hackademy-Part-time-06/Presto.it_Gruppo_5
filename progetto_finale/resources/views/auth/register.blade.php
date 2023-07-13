@@ -20,7 +20,7 @@
                         <!-- Background image for card set in CSS! -->
                     </div>
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-5">Registrati qui</h5>
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">{{ __('messages.register') }}</h5>
 
 
                         <form action="{{ route('register') }}" method="POST">
@@ -44,7 +44,7 @@
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password">
-                                <label for="floatingPassword">>{{ __('messages.password') }}</label>
+                                <label for="floatingPassword">{{ __('messages.password') }}</label>
                             </div>
 
                             <div class="form-floating mb-3">

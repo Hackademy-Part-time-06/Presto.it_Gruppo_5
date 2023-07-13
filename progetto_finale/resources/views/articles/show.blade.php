@@ -52,7 +52,7 @@
                         @if ($article->user_id == Auth::user()->id)
                             <!-- Edit button -->
                             <a href="{{ route('articles.edit', $article) }}"
-                                class="btn btn-outline-secondary text-info btn-sm m-3">Modifica</a>
+                                class="btn btn-outline-secondary text-info btn-sm m-3">{{ __('messages.modifying') }} </a>
                             <!-- Delete button -->
                             <livewire:article-delete-form :article="$article" />
                         @endif

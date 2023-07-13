@@ -46,12 +46,12 @@ class RevisorController extends Controller
         Mail::to('admin@presto.it')->send(new becomeRevisor(Auth::user()));
         return redirect()
             ->back()
-                ->with('success', "complimenti la richiesta è stata inoltrata con successo");
+            ->with('success',  __('messages.revRequest'));
     }
     public function makeRevisor(User $user)
     {
         Artisan::call('presto:makeUserRevisor', ["email" => $user->email]); //catturo l'email dell'utente che ci è arrivata e lo passiamo come paramentro al comando presto:makerevisor
-        return redirect('/')->with('success', "complimenti l'utente è diventato un revisore");
+        return redirect('/')->with('success', __('messages.revMessage'));
     }
 
     public function formRevisor()

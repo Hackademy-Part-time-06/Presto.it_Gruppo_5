@@ -47,9 +47,9 @@
             <div class="col-md-6">
                 <div class="lista  sfondo-carosello">
                     <h1 class="display-5 fw-bolder py-2">{{ $article_to_check->title }}</h1>
-                    <p>Prezzo: {{ $article_to_check->price }}</p>
+                    <p>{{ __('messages.price') }} {{ $article_to_check->price }}</p>
                     <hr>
-                    <p>Descrizione: {{ $article_to_check->description }}</p>
+                    <p>{{ __('messages.description') }} {{ $article_to_check->description }}</p>
                     <hr>
                     <p>User: {{ $article_to_check->user_id }}</p>
                     <hr>
@@ -60,7 +60,8 @@
                                     method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-success shadow">Accetta</button>
+                                    <button type="submit"
+                                        class="btn btn-success shadow">{{ __('messages.revAccept') }}</button>
                                 </form>
 
                             </div>
@@ -69,7 +70,8 @@
                                     method="POST">
                                     @csrf
                                     @method('PATCH')
-                                    <button type="submit" class="btn btn-danger shadow">Rifiuta</button>
+                                    <button type="submit"
+                                        class="btn btn-danger shadow">{{ __('messages.revReject') }}</button>
                                 </form>
                             </div>
                         </div>
