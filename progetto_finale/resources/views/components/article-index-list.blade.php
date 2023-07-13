@@ -3,7 +3,7 @@
             @forelse ($articles as $article)
                 <div class="col-lg-4 col-sm-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="@if($latestarticle->images->isEmpty()) https://via.placeholder.com/700x400 @else {{$latestarticle->images->first()->getUrl(300 , 300)}} @endif"
+                        <a href="#"><img class="card-img-top" src="@if($article->images->isEmpty()) https://via.placeholder.com/700x400 @else {{$article->images->first()->getUrl(300 , 300)}} @endif"
                                 alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
