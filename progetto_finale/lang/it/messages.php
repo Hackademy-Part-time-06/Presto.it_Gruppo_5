@@ -67,6 +67,8 @@ return [
     'editBtn' => 'Modifica',
     'deleteBtn' => 'Cancella',
 
+    // search
+    'searchTitle' => 'Cerca gli articoli per:'
 
 
 ];

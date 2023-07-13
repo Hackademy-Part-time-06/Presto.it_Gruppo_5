@@ -65,4 +65,8 @@ return [
     'editBtn' => 'Edit',
     'deleteBtn' => 'Delete',
 
+    // search
+    'searchTitle' => 'Search articles by:'
+
+
 ];

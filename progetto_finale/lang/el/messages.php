@@ -65,4 +65,7 @@ return [
     'editBtn' => 'Επεξεργασία',
     'deleteBtn' => 'Επεξεργασία',
 
+    // search
+    'searchTitle' => 'Αναζήτηση άρθρων από:'
+
 ];
