@@ -10,7 +10,7 @@
     @livewireStyles
 </head>
 
-<body id="vanta">
+<body id="vanta" >
 
     <x-navbar />
 

@@ -10,18 +10,20 @@
 @import'submit.css';
 @import'button.css';
 @import "/node_modules/flag-icons/css/flag-icons.min.css";
+@import 'article-create-form.css';
 
 
 body {
     font-family: 'Belleza', sans-serif;
     background-color: black;
+   
 
 
 
 }
 
 main {
-    min-height: 90vh;
+    min-height: 100vh;
 
 
 

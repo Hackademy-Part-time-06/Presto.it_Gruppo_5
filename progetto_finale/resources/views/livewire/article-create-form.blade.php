@@ -1,9 +1,9 @@
 <div class="section">
-    <div class="container">
-        <div class="row full-height justify-content-center">
+    <div class="container ">
+        <div class="row full-height justify-content-center ">
             <div class="col-12 text-center align-self-center py-5 margin-bottom">
                 <div class="section pb-5 pt-5 pt-sm-2 text-center">
-                    <div class="card-3d-wrap mx-auto">
+                    <div class="card-3d-wrap mx-auto ">
                         <div class="card-3d-wrapper">
                             <div class="card-front">
                                 <div class="center-wrap">
@@ -16,13 +16,8 @@
                                             </div>
                                         @endif
 
-
-
                                         <form wire:submit.prevent="store">
                                             @csrf
-
-
-
                                             <div class="form-group">
                                                 <label for="input-description" class="form-label">Categoria</label>
                                                 <select class="form-select mb-3 form-style"
@@ -34,33 +29,6 @@
                                                     @endforeach
                                                 </select>
                                             </div>
-
-                                            <div class="mb-3 form-group">
-                                                <label for="input-image" class="form-label">Immagini</label>
-                                                <input wire:model="temporary_images" name="images" class="form-style" type="file" multiple />        
-                                                <!-- Messaggio di errore -->
-                                                @error('temporary_images.*')
-                                                    <span class="error">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                            {{-- se l'immagine non è vuota --}}
-                                            @if (!empty($images))
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <p> Photo Preview: </p>
-                                                        <div class="row border border-4 border-info rounded shadow py-4">
-                                                            @foreach ($images as $key => $image)
-                                                             <div class="col my-3" > 
-                                                                <div class="mx-auto shadow rounded">
-                                                                    <img src="{{$image->temporaryUrl()}}" alt="Immagine">
-                                                                </div>
-                                                                <button type="button" class="btn btn-danger shadow text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
-                                                             </div>
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endif
 
                                             <div class="mb-3 form-group">
                                                 <label for="input-title" class="form-label">Nome prodotto</label>
@@ -97,12 +65,26 @@
                                                 @error('description')
                                                     <span style="color: red">{{ $message }}</span>
                                                 @enderror
-
                                             </div>
-
+                                            {{-- IMMAGINI --}}
+                                            <div class="mb-3 form-group  ">
+                                                <label for="input-image" class="form-label">Immagini</label>
+                                                <input wire:model="temporary_images" name="images" class="form-style"
+                                                    type="file" multiple />
+                                                <!-- Messaggio di errore -->
+                                                @error('temporary_images.*')
+                                                    <span class="error">{{ $message }}</span>
+                                                @enderror
+                                            </div>
                                             <button type="submit" class="button-create">Crea</button>
+                                            {{-- se l'immagine non è vuota --}}
+
+
+
+
 
                                         </form>
+
 
                                     </div>
                                 </div>
@@ -111,7 +93,28 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+            @if (!empty($images))
+        <div class="box-img-form-article ">
+            <div class="row m-3">
+               
+
+                    @foreach ($images as $key => $image)
+                    <div class="col m-2">
+                            <div class="mx-auto shadow rounded">
+                                <img class="img-fluid" src="{{ $image->temporaryUrl() }}" alt="Immagine">
+                            </div>
+                            <button type="button" class="btn btn-danger shadow text-center mt-2 mx-auto"
+                                wire:click="removeImage({{ $key }})">Cancella</button>
+                        
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+         @endif
     </div>
+    </div>
+
 </div>

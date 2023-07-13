@@ -1,0 +1,16 @@
+/* .div-position{
+    position: relative;
+}
+.immagine-position{
+    position: absolute;
+  
+ 
+   margin-left: 10%;
+} */
+.box-img-form-article{
+    width: 70%;
+    border: solid;
+    border-radius: 20px;
+    border-color: brown;
+    margin-bottom: 20px;
+}
