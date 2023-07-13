@@ -46,5 +46,4 @@ return [
     'confirmPassword' => 'Conferma password',
     'registerBtn' => 'Registrati',
     'accountBtn?' => 'Hai già un account?',
-
 ];
