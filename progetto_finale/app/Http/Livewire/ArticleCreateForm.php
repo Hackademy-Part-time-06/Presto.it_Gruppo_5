@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use App\Jobs\ResizeImage;
-use Livewire\Component;
 use App\Models\Article;
+use Livewire\Component;
 use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\File;
 
 class ArticleCreateForm extends Component
 {
@@ -84,6 +85,7 @@ class ArticleCreateForm extends Component
                 );
                 dispatch(new ResizeImage($newImage->path , 700 , 400)); //al job appena creato passo il path dell'img salva e le dimensioni che voglio dell'img 
             }
+            File::deleteDirectory(storage_path('/app/liviwire-tmp'));
         }
         /*
         $category->articles()->create([

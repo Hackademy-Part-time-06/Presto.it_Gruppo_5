@@ -15,4 +15,6 @@ class Image extends Model
     public function article(){
         return $this->belongsTo(Article::class); //relazione 1 to N le immagini appartengono ad un articolo
     }
+
+    //creo le funzioni per recuperare le img croppate
 }
