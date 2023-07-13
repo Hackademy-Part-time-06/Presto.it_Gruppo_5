@@ -8,7 +8,8 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rules\File;
+use File;
+
 
 class ArticleCreateForm extends Component
 {
@@ -83,9 +84,10 @@ class ArticleCreateForm extends Component
                 $newImage = $this->article->images()->create(           //ogni annuncio avrà l'img croppata in questa cartella
                     ['path' => $image->store($newFileName, 'public')]
                 );
-                dispatch(new ResizeImage($newImage->path , 700 , 400)); //al job appena creato passo il path dell'img salva e le dimensioni che voglio dell'img 
+                dispatch(new ResizeImage($newImage->path , 300 , 300)); //al job appena creato passo il path dell'img salva e le dimensioni che voglio dell'img 
             }
-            File::deleteDirectory(storage_path('/app/liviwire-tmp'));
+            File::deleteDirectory(storage_path('/app/livewire-tmp')); 
+            
         }
         /*
         $category->articles()->create([
