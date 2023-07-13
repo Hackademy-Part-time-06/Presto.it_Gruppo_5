@@ -19,7 +19,7 @@
                                     aria-label="Slide 3"></button>
                             </div>
                             @if ($article_to_check->images)
-                                <div class="carousel-inner" style="height: 450px;">
+                                <div class="carousel-inner" >
                                     @foreach ($article_to_check->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif">
                                             <img class="img-fluid" src="{{Storage::url($image->path)}}" alt="..." />
