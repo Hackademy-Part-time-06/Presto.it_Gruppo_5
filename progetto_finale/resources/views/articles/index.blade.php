@@ -11,7 +11,7 @@
 
                 <form action="{{ route('category.search') }}" method="GET" class="d-flex" id="search-form">
 
-                    <select class="mb-3 form-select shadow" id="select_category" name="id"
+                    <select class="mx-2 form-select shadow" id="select_category" name="id"
                         aria-label="Default select example">
                         <option selected>{{ __('messages.allCategories') }}</option>
                         @foreach ($categories as $category)
