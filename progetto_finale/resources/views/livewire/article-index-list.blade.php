@@ -8,7 +8,7 @@
                     <h3>{{ $article->title }}</h3>
                     <hr>
                 </h4>
-                <p class="card-text">Prezzo: {{ $article->price }}</p>
+                <p class="card-text">Prezzo: {{ $article->price }} €</p>
 
                 <p class="card-text">Descrizione: {{ $article->description }}</p>
 
