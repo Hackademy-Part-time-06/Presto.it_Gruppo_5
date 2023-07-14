@@ -120,10 +120,11 @@ h6 span {
     height: 150%;
     box-shadow: 10px 10px rgb(162 162 162 / 35%);
     background-color: rgba(118, 118, 118, 0.521);
-    background-image: url("https://thypix.com/wp-content/uploads/2021/01/black-wallpapers-for-smartphone-68-700x1244.jpg");
+    background-image: url("https://thypix.com/wp-content/uploads/2021/01/black-wallpapers-for-smartphone-44.jpg");
+    /* https://thypix.com/wp-content/uploads/2021/01/black-wallpapers-for-smartphone-68-700x1244.jpg */
     background-position: bottom center;
     background-repeat: no-repeat;
-     /* background-size: 100%;  */
+     background-size: 100%;  
     position: absolute;
     border-radius: 10px;
     left: 0;
