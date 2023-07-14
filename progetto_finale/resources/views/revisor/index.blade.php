@@ -46,11 +46,11 @@
             <div class="col-md-6">
                 <div class="lista  sfondo-carosello">
                     <h1 class="display-5 fw-bolder py-2">{{ $article_to_check->title }}</h1>
-                    <p>{{ __('messages.price') }} {{ $article_to_check->price }}</p>
+                    <p>{{ __('messages.price') }} {{ $article_to_check->price }} €</p>
                     <hr>
                     <p>{{ __('messages.description') }} {{ $article_to_check->description }}</p>
                     <hr>
-                    <p>User: {{ $article_to_check->user_id }}</p>
+                    <p>Data di creazione: {{ $article_to_check->created_at }}</p>
                     <hr>
                     <div class="container">
                         <div class="row">
@@ -70,7 +70,7 @@
                                     @csrf
                                     @method('PATCH')
                                     <button type="submit"
-                                        class="btn btn-danger shadow">{{ __('messages.revReject') }}</button>
+                                        class="btn btn-danger shadow mb-3">{{ __('messages.revReject') }}</button>
                                 </form>
                             </div>
                         </div>
