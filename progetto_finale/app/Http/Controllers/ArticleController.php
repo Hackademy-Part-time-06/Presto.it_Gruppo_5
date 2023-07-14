@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller 
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -109,5 +109,11 @@ class ArticleController extends Controller
     {
         session()->put('locale', $lang);
         return redirect()->back();
+    }
+
+    public function categorysearch(Request $request)
+    {
+        $articles = Category::find($request->id)->articles()->paginate(6);
+        return view('articles.index', compact('articles'));
     }
 }

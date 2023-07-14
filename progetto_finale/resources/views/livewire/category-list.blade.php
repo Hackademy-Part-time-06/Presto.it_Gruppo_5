@@ -4,7 +4,7 @@
         <h2 class="section-heading">{{ __('messages.categoriesTitle') }}</h2>
     </div>
     <div class="text-center">
-        <div class="containerCat">
+        <div class="containerCat container">
             <div class="row mx-5">
 
                 @foreach ($categories as $category)

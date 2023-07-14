@@ -1,7 +1,7 @@
 <x-main>
     <x-header />
 
-    <div class="container-fluid">
+    <div class="container">
 
 
         <section class="card-section">
@@ -20,11 +20,11 @@
                 @endforeach
             </div>
     </div>
-    
 
-        <livewire:category-list />
 
-    
+    <livewire:category-list />
+
+
     </section>
 
     </div>

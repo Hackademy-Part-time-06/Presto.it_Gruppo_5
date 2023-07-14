@@ -1,5 +1,4 @@
-
-    @foreach ($articles as $article)
+@foreach ($articles as $article)
     <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100 box_shadow wrapper">
             <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400" alt=""></a>
@@ -8,7 +7,7 @@
                     <h3>{{ $article->title }}</h3>
                     <hr>
                 </h4>
-                <p class="card-text">Prezzo: {{ $article->price }} €</p>
+                <p class="card-text">ciao amici: {{ $article->price }} €</p>
 
                 <p class="card-text">Descrizione: {{ $article->description }}</p>
 
