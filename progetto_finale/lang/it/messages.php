@@ -69,7 +69,11 @@ return [
     'deleteBtn' => 'Cancella',
 
     // search
-    'searchTitle' => 'Cerca gli articoli per:'
+    'searchTitle' => 'Cerca gli articoli per:',
+
+    // noAnnouncement
+    'notAnnouncement' => 'Non ci sono articoli appartenenti a questa categoria ',
+
 
 
 ];

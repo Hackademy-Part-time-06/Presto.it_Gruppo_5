@@ -58,7 +58,7 @@
                                 <button type="submit"
                                     class="btn btn-outline-success my-3">{{ __('messages.registerBtn') }}</button>
                                 <a class="btn btn-outline-info"
-                                    href="{{ route('login') }}">{{ __('messages.accountBtn') }}</a>
+                                    href="{{ route('login') }}">{{ __('messages.accountBtn?') }}</a>
                             </div>
 
                         </form>
