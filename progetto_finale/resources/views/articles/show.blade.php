@@ -16,10 +16,10 @@
                                 aria-label="Slide 3"></button>
                         </div>
                         @if ($article->images)
-                            <div class="carousel-inner" >
+                            <div class="carousel-inner">
                                 @foreach ($article->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img class="img-fluid" src="{{Storage::url($image->path)}}" alt="..." />
+                                        <img class="img-fluid" src="{{ Storage::url($image->path) }}" alt="..." />
                                     </div>
                                 @endforeach
                             </div>
@@ -46,7 +46,7 @@
                     <hr>
                     <p>{{ __('messages.description') }} {{ $article->description }}</p>
                     <hr>
-                    <p>Data di creazione: {{ $article->created_at }}</p>
+                    <p>{{ __('messages.creationDate') }} {{ $article->created_at }}</p>
                     <hr>
                     @auth
                         @if ($article->user_id == Auth::user()->id)

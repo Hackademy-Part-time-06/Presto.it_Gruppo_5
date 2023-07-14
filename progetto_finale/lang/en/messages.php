@@ -31,6 +31,7 @@ return [
     'searchError' => 'There are no research-related announcements',
     'deleteBtn' => 'Delete',
     'categoriesTitle' => 'Explore our categories',
+    'creationDate' => 'Date of creation:',
 
     // login
     'login' => 'Login',

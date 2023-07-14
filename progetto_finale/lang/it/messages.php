@@ -30,6 +30,7 @@ return [
     'modifying' => 'Modifica',
     'searchError' => 'Non ci sono annunci correlati alla ricerca',
     'deleteBtn' => 'Elimina',
+    'creationDate' => 'Data di creazione:',
 
     // categories
     'categoriesTitle' => 'Esplora le nostre categorie',
