@@ -1,33 +1,33 @@
 <x-main>
     <x-header />
 
-    <div class="container">
+    <div class="container-fluid">
 
-        <div class="row mt-4">
-            <section class="card-section">
-                <div class="container">
-                    <div class="row">
-                        <div class="text-center p-3">
-                            <h2 class="section-heading text-uppercase">{{ __('messages.allAnnouncements') }}</h2>
-                            <h3 class="section-subheading">{{ __('messages.allOffers') }}</h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        @foreach ($latestarticles as $latestarticle)
-                            <div class="col-lg-4 col-sm-6 mb-4">
-                                <x-homecard :latestarticle="$latestarticle" />
-                            </div>
-                        @endforeach
-                    </div>
+
+        <section class="card-section">
+
+            <div class="row mt-5 ">
+                <div class="text-center p-3">
+                    <h2 class="section-heading text-uppercase">{{ __('messages.allAnnouncements') }}</h2>
+                    <h3 class="section-subheading">{{ __('messages.allOffers') }}</h3>
                 </div>
-                <div class="container-fluid mb-5">
+            </div>
+            <div class="row m-3">
+                @foreach ($latestarticles as $latestarticle)
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <x-homecard :latestarticle="$latestarticle" />
+                    </div>
+                @endforeach
+            </div>
+    </div>
+    
 
-                    <livewire:category-list />
+        <livewire:category-list />
 
-                </div>
-            </section>
+    
+    </section>
 
-        </div>
+    </div>
     </div>
 
 </x-main>
