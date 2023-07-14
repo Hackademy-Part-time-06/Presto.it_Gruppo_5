@@ -52,6 +52,10 @@ return [
     'revReject' => 'Reject',
     'revMessage' => 'Congratulations! You are now an auditor',
     'revRequest' => 'Congratulations! Your request has been successfully submitted',
+    'revTitle' => 'If you want to become an auditor, from the hover you have to pass',
+    'revIndov1' => 'Good job!',
+    'revIndov2' => 'Click here
+    to work with us',
 
     // create
     'createTitle' => 'Place your ad here!',
@@ -67,7 +71,32 @@ return [
     'deleteBtn' => 'Delete',
 
     // search
-    'searchTitle' => 'Search articles by:'
+    'searchTitle' => 'Search announcement by:',
 
+    // noAnnouncement
+    'notAnnouncement' => 'There are no ads in this category',
+
+    // formMail
+    'formMailTitle' => 'Please enter the required data',
+    'surname' => 'Surname',
+    'phone' => 'Phone number',
+    'city' => 'City',
+    'formMailtext' => 'Why do you want to work with us?',
+    'submitBtn' => 'Submit',
+
+    //category
+    'Motori' => 'Motor',
+    'Auto' => 'Auto',
+    'Informatica' => 'Technology',
+    'Articoli per la casa' => 'Household articles',
+    'Videogames' => 'Videogames',
+    'Sport' => 'Sport',
+    'Immobili' => 'Real estate',
+    'Telefonia' => 'Telephony',
+    'Scuola' => 'School',
+    'Barche' => 'Boats',
+
+    //loadImage
+    'loadImages' => 'Preview'
 
 ];

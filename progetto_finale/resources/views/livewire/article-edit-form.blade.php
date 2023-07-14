@@ -28,7 +28,8 @@
                                                     aria-label="Default select example" wire:model.defer="category_id">
                                                     <option selected>{{ __('messages.allCategories') }}</option>
                                                     @foreach ($categories as $category)
-                                                        <option value="{{ $category->id }}">{{ $category->name }}
+                                                        <option value="{{ $category->id }}">
+                                                            {{ __('messages.' . $category->name) }}
                                                         </option>
                                                     @endforeach
                                                 </select>

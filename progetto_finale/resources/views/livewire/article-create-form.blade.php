@@ -25,7 +25,8 @@
                                                     aria-label="Default select example" wire:model.defer="category_id">
                                                     <option selected>{{ __('messages.allCategories') }}</option>
                                                     @foreach ($categories as $category)
-                                                        <option value="{{ $category->id }}">{{ $category->name }}
+                                                        <option value="{{ $category->id }}">
+                                                            {{ __('messages.' . $category->name) }}
                                                         </option>
                                                     @endforeach
                                                 </select>
@@ -96,7 +97,8 @@
             </div>
         </div>
         @if (!empty($images))
-            <div class="box-img-form-article ">
+            <div class="box-img-form-article m-auto mb-5">
+                <h2 class="text-white text-center mt-4 mb-3">Anteprima</h2>
                 <div class="row m-3">
 
 
@@ -106,7 +108,7 @@
                                 <img class="img-fluid" src="{{ $image->temporaryUrl() }}" alt="Immagine">
                             </div>
                             <button type="button" class="btn btn-danger shadow text-center mt-2 mx-auto"
-                                wire:click="removeImage({{ $key }})">Cancella</button>
+                                wire:click="removeImage({{ $key }})">{{ __('messages.deleteBtn') }}</button>
 
                         </div>
                     @endforeach

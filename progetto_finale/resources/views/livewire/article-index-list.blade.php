@@ -7,18 +7,18 @@
                     <h3>{{ $article->title }}</h3>
                     <hr>
                 </h4>
-                <p class="card-text">ciao amici: {{ $article->price }} €</p>
+                <p class="card-text">{{ __('messages.price') }} {{ $article->price }} €</p>
 
-                <p class="card-text">Descrizione: {{ $article->description }}</p>
+                <p class="card-text">{{ __('messages.description') }} {{ $article->description }}</p>
 
-                <p class="card-text">Categoria: {{ $article->category->name }}</p>
+                <p class="card-text">{{ __('messages.category') }} {{ $article->category->name }}</p>
 
 
                 <button class="custom-btn btn-5"><span><a href="{{ route('articles.show', $article) }}"
-                            class="">Dettagli</a></button>
+                            class="">{{ __('messages.detailsBtn') }}</a></button>
 
                 <button class="custom-btn btn-5"><span> <a href="{{ route('articles.edit', $article) }}"
-                            class="">Modifica</a></span></button>
+                            class="">{{ __('messages.modifying') }}</a></span></button>
 
                 <livewire:article-delete-form :article="$article" />
             </div>

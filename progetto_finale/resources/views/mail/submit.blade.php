@@ -16,25 +16,24 @@
 </div>
 </div> --}}
 
-    <div class="container-fluid"> 
+    <div class="container-fluid">
 
         <div class="row">
- 
+
             <div class="col-md-12">
-                <h2 class="text-white text-center margTop">Se revisore vuoi diventare, dall'hover devi passare</h2>
+                <h2 class="text-white text-center margTop">{{ __('messages.revTitle') }}</h2>
                 <div class="body-submit">
 
                     <div class="card-submit">
                         <div class="card-info-submit text-center">
 
-                            <p>Ottimo lavoro!
+                            <p>{{ __('messages.revIndov1') }}
 
                                 <br>
                                 <br>
 
                                 <a class="card-info-submit textNone card-info-submit2"
-                                    href="{{ route('form.revisor') }}">Clicca qui
-                                    per lavorare con noi</a>
+                                    href="{{ route('form.revisor') }}">{{ __('messages.revIndov2') }}</a>
 
 
 

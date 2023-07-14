@@ -15,7 +15,7 @@
                         aria-label="Default select example">
                         <option selected>{{ __('messages.allCategories') }}</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option value="{{ $category->id }}">{{ __('messages.' . $category->name) }}</option>
                         @endforeach
 
                     </select>
@@ -26,7 +26,7 @@
 
             </div>
             <div class="col-lg-4 col-sm-6 mb-4 search-position-box">
-                <h4 class="search-position-scritta">{{ __('messages.registerName') }}</h4>
+                <h4 class="search-position-scritta">{{ __('messages.registerName') }}:</h4>
                 <x-search-bar />
             </div>
             <div class="col-lg-4 col-sm-6 mb-4 search-position-box">

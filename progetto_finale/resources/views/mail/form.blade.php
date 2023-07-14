@@ -20,7 +20,7 @@
                         <!-- Background image for card set in CSS! -->
                     </div>
                     <div class="card-body p-4 p-sm-5">
-                        <h5 class="card-title text-center mb-5 fw-light fs-4">Inserisci i dati richiesti</h5>
+                        <h5 class="card-title text-center mb-5 fw-light fs-4">{{ __('messages.formMailTitle') }}</h5>
 
 
                         <form action="{{ route('become.revisor') }}" method="POST">
@@ -30,45 +30,47 @@
                             <div class="form-floating mb-3">
                                 <input type="name" class="form-control" id="floatingInputEmail" name="name"
                                     placeholder="Name">
-                                <label for="floatingInputEmail">Nome</label>
+                                <label for="floatingInputEmail">{{ __('messages.registerName') }}</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInputEmail" name="surname"
                                     placeholder="Surname">
-                                <label for="floatingInputEmail">Cognome</label>
+                                <label for="floatingInputEmail">{{ __('messages.surname') }}</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="number" class="form-control" id="floatingInputEmail" name="number"
                                     placeholder="number">
-                                <label for="floatingInputEmail">Cellulare</label>
+                                <label for="floatingInputEmail">{{ __('messages.phone') }}</label>
                             </div>
 
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputEmail"
                                     placeholder="name@example.com" name="email">
-                                <label for="floatingInputEmail">Email</label>
+                                <label for="floatingInputEmail">{{ __('messages.emailAddress') }}</label>
                             </div>
 
 
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInputEmail" name="city"
                                     placeholder="Città">
-                                <label for="floatingInputEmail">Città</label>
+                                <label for="floatingInputEmail">{{ __('messages.city') }}</label>
                             </div>
 
                             <div class="form-floating mb-3">
-                                
-                                
-                                        <p class="mb-1 fs-5">Perchè vuoi lavorare con noi:</p> <textarea id="message" type="text" placeholder="Enter your message" name="description" class="form-control input-box rm-border"></textarea>
-                                    
-                               
+
+
+                                <p class="mb-1 fs-5">{{ __('messages.formMailtext') }}</p>
+                                <textarea id="message" type="text" placeholder="Enter your message" name="description"
+                                    class="form-control input-box rm-border"></textarea>
+
+
                             </div>
 
 
 
                             <div class="d-grid mb-2">
-                                <button type="submit" class=" btn btn-outline-primary  my-3"> <a class="text-dark "
-                                        >Invio
+                                <button type="submit" class=" btn btn-outline-primary  my-3"> <a
+                                        class="text-dark ">{{ __('messages.submitBtn') }}
                                     </a></button>
 
                             </div>

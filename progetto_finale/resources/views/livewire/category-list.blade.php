@@ -12,7 +12,7 @@
                         <div class="cardCat mb-5"> <i class="icona bi bi-bag fs-2"></i>
 
                             <h5><a class="scritta-categorie"
-                                    href="{{ route('category.show', $category) }}">{{ $category->name }}</a>
+                                    href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name) }}</a>
                             </h5>
                         </div>
                     </div>

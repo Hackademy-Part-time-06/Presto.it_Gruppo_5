@@ -19,7 +19,7 @@ return [
     'headerTitle' => 'Acquista nel mondo del domani, oggi',
 
     // homepage
-    'allAnnouncements' => 'I NOSTRI ULTIMI ARTICOLI',
+    'allAnnouncements' => 'I NOSTRI ULTIMI ANNUNCI',
     'allOffers' => 'Non perderti le offerte!',
 
     // card
@@ -54,6 +54,10 @@ return [
     'revReject' => 'Rifiuta',
     'revMessage' => 'Complimenti! Ora sei un revisore',
     'revRequest' => 'Complimenti! La richiesta è stata inoltrata con successo',
+    'revTitle' => 'Se revisore vuoi diventare, dall\'hover devi passare',
+    'revIndov1' => 'Ottimo lavoro!',
+    'revIndov2' => 'Clicca qui
+    per lavorare con noi',
 
     // create
     'createTitle' => 'Inserisci il tuo annuncio qui!',
@@ -69,11 +73,31 @@ return [
     'deleteBtn' => 'Cancella',
 
     // search
-    'searchTitle' => 'Cerca gli articoli per:',
+    'searchTitle' => 'Cerca gli annunci per:',
 
     // noAnnouncement
-    'notAnnouncement' => 'Non ci sono articoli appartenenti a questa categoria ',
+    'notAnnouncement' => 'Non ci sono annunci appartenenti a questa categoria ',
 
+    // formMail
+    'formMailTitle' => 'Inserisci i dati richiesti',
+    'surname' => 'Cognome',
+    'phone' => 'Cellulare',
+    'city' => 'Città',
+    'formMailtext' => 'Perchè vuoi lavorare con noi?',
+    'submitBtn' => 'Invio',
 
+    //category
+    'Motori' => 'Motori',
+    'Auto' => 'Auto',
+    'Informatica' => 'Informatica',
+    'Articoli per la casa' => 'Articoli per la casa',
+    'Videogames' => 'Videogames',
+    'Sport' => 'Sport',
+    'Immobili' => 'Immobili',
+    'Telefonia' => 'Telefonia',
+    'Scuola' => 'Scuola',
+    'Barche' => 'Barche',
 
+    //loadImage
+    'loadImages' => 'Anteprima'
 ];

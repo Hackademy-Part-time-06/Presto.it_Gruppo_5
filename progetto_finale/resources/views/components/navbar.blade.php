@@ -15,7 +15,8 @@
             <ul class='sub-menus'>
 
                 @foreach ($categories as $category)
-                    <li><a href="{{ route('category.show', $category) }}">{{ $category->name }}</a></li>
+                    <li><a href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name) }}</a>
+                    </li>
                 @endforeach
 
             </ul>
@@ -78,7 +79,7 @@
 
                 <li><a class='dropdown-arrow m-0' href=''><i class="bi bi-globe"></i><i
                             class="ms-2 bi bi-caret-down"></i> </a>
-                    <ul class='sub-menus'>
+                    <ul class='sub-menus' id="flags-dropdown">
                         <li>
                             <x-_locale lang='it' nation='it' />
                         </li>
