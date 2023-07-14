@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class ArticleController extends Controller 
 {
     /**
      * Display a listing of the resource.

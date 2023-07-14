@@ -168,7 +168,7 @@ nav {
     height: auto;
     overflow: hidden;
     width: 170px;
-    background: #545454;
+    background: black;
     position: absolute;
     z-index: 99;
     display: none;
@@ -180,7 +180,7 @@ nav {
 }
 
 #menu ul.sub-menus a {
-    color: #ffffffa8;
+    color: white;
     font-size: 14px;
 
 }
