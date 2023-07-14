@@ -16,10 +16,10 @@
 </div>
 </div> --}}
 
-    <div class='container'> 
+    <div class="container-fluid"> 
 
         <div class="row">
-
+ 
             <div class="col-md-12">
                 <h2 class="text-white text-center margTop">Se revisore vuoi diventare, dall'hover devi passare</h2>
                 <div class="body-submit">
