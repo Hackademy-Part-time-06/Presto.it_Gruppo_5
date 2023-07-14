@@ -1,5 +1,5 @@
 <div class="section">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row full-height justify-content-center">
             <div class="col-12 text-center align-self-center py-5 margin-bottom">
                 <div class="section pb-5 pt-5 pt-sm-2 text-center">
@@ -8,7 +8,7 @@
                             <div class="card-front">
                                 <div class="center-wrap">
                                     <div class="section text-center">
-                                        <h4 class="mb-4 pb-3 text-white">{{ __('messages.createTitle') }}</h4>
+                                        <h4 class="text-white">{{ __('messages.createTitle') }}</h4>
 
                                         @if (session()->has('article'))
                                             <div class="alert alert-success text-center">
