@@ -86,11 +86,11 @@
             <div class="col-md-12">
                 <div class="mt-5 box-google-vision text-google-vison">
                     <h5 class="">Immagine da revisionare</h5>
-                    <p>Adulti:<span class="{{ $image->adult }}"></span></p>
-                    <p>Satira:<span class="{{ $image->spoof }}"></span></p>
-                    <p>Medicina:<span class="{{ $image->medical }}"></span></p>
-                    <p>Violenza:<span class="{{ $image->violence }}"></span></p>
-                    <p>contenuto ammiccante:<span class="{{ $image->racy }}"></span></p>
+                    <p>Adulti:<span class=" p-2 {{ $image->adult }}"></span></p>
+                    <p>Satira:<span class="p-2 {{ $image->spoof }}"></span></p>
+                    <p>Medicina:<span class="p-2 {{ $image->medical }}"></span></p>
+                    <p>Violenza:<span class="p-2 {{ $image->violence }}"></span></p>
+                    <p>contenuto ammiccante:<span class="p-2 {{ $image->racy }}"></span></p>
                 </div>
             </div>
         </div>
