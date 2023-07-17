@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Jobs\GoogleVisionSafeSearch;
+use App\Jobs\RemoveFaces;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
@@ -10,6 +11,9 @@ use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
+use App\Jobs\GoogleVisionLabelImage;
+
+
 
 
 class ArticleCreateForm extends Component
@@ -85,12 +89,17 @@ class ArticleCreateForm extends Component
                 $newImage = $this->article->images()->create(           //ogni annuncio avrà l'img croppata in questa cartella
                     ['path' => $image->store($newFileName, 'public')]
                 );
-                dispatch(new ResizeImage($newImage->path , 300 , 300)); //al job appena creato passo il path dell'img salva e le dimensioni che voglio dell'img
-                dispatch(new GoogleVisionSafeSearch($newImage->id)) ; 
+
+                RemoveFaces::withChain([
+                    new ResizeImage($newImage->path, 300, 300), //al job appena creato passo il path dell'img salva e le dimensioni che voglio dell'img
+                    new GoogleVisionSafeSearch($newImage->id),
+                    new GoogleVisionLabelImage($newImage->id),
+                ])->dispatch($newImage->id);
+
+                // dispatch(new GoogleVisionSafeSearch($newImage->id));
+                // dispatch(new GoogleVisionLabelImage($newImage->id));
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
-            
-            
         }
         /*
         $category->articles()->create([
