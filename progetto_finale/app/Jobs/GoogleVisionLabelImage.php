@@ -20,7 +20,7 @@ class GoogleVisionLabelImage implements ShouldQueue
 
     public function __construct($article_image_id)
     {
-        $this->article_image_id= $article_image_id;
+        $this->article_image_id = $article_image_id;
     }
 
     /**
@@ -34,27 +34,26 @@ class GoogleVisionLabelImage implements ShouldQueue
         if (!$i) {
             return;
         }
-
+//fisicamente recuperiamo l'img con filegetcontents
         $image = file_get_contents(storage_path('app/public/' . $i->path));
         //impostiamo le variabili di ambiente per accedere alle credenziali del servizio google
         //lo sto aggiungendo nel .env
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('Google_credential.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
-    
+//cerchiamo il contenuto dell img
         $response = $imageAnnotator->labelDetection($image);
-        
-        $labels= $response->getLabelAnnotations();
-
-        if($labels){
-            $result=[];
-            foreach ($labels as $label)  {
-                $result[]=$label->getDescription();
-            }   
-            $i->labels=$result;
+//richiediamo le annotazioni
+        $labels = $response->getLabelAnnotations();
+//se ci sono delle labels(contenuti nell'img), per ogni img andremo ad aggiungere in un array vuoto la descrizione della label
+        if ($labels) {
+            $result = [];
+            foreach ($labels as $label) {
+                $result[] = $label->getDescription();
+            }
+//presa la labels salviamo nel database all'interno del campo label l'array rislutante
+            $i->labels = $result;
             $i->save();
-            
-           }
+        }
     }
-
 }

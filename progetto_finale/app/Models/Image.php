@@ -12,6 +12,8 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = ['path'];
+    //labels viene castato in un array
+    protected $casts=['labels' =>'array'];
 
     public function article()
     {
