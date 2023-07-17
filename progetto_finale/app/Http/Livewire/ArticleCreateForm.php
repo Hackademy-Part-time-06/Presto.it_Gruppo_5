@@ -9,7 +9,7 @@ use App\Models\Category;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
-use File;
+use Illuminate\Support\Facades\File;
 
 
 class ArticleCreateForm extends Component
