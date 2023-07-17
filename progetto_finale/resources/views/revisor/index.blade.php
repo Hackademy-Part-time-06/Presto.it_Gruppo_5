@@ -19,26 +19,27 @@
                                     aria-label="Slide 3"></button>
                             </div>
                             @if ($article_to_check->images)
-                                <div class="carousel-inner" >
+                                <div class="carousel-inner">
                                     @foreach ($article_to_check->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif">
-                                            <img class="img-fluid" src="{{Storage::url($image->path)}}" alt="..." />
+                                            <img class="img-fluid" src="{{ Storage::url($image->path) }}"
+                                                alt="..." />
                                         </div>
                                     @endforeach
                                 </div>
                             @endif
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                                data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                                data-bs-slide="next">
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-    
+
                     </section>
 
             </div>
@@ -75,14 +76,24 @@
                             </div>
 
                         </div>
-                        <div class="row">
-                            
-                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 box-google-vision text-google-vison">
+                    <h5 class="">Immagine da revisionare</h5>
+                    <p>Adulti:<span class="{{ $image->adult }}"></span></p>
+                    <p>Satira:<span class="{{ $image->spoof }}"></span></p>
+                    <p>Medicina:<span class="{{ $image->medical }}"></span></p>
+                    <p>Violenza:<span class="{{ $image->violence }}"></span></p>
+                    <p>contenuto ammiccante:<span class="{{ $image->racy }}"></span></p>
+                </div>
+            </div>
+        </div>
     </div>
     @endif
 </x-main>

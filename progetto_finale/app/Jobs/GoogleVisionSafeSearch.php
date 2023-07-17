@@ -56,12 +56,12 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $violence = $safe->getViolence();
         $racy = $safe->getRacy();
         //successivamente creamo un semaforo-etichette che ci servirà per identificare la classe aggiunta
-
-        $likelihoodName = [
-            /* //'UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY',
+/* //'UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY',
             'POSSIBLE', 'LIKELY', 'VERY_LIKELY' */
-            'text-secondary fas fa-user-circle', 'text-success fas fa-user-circle', 'text-secondary fas fa-user-circle',
-            'text-warning fas fa-user-circle', 'text-warning fas fa-user-circle', 'text-danger fas fa-user-circle',
+        $likelihoodName = [
+            
+            'text-secondary bi bi-circle-fill', 'text-success bi bi-circle-fill', 'text-secondary bi bi-circle-fill',
+            'text-warning bi bi-circle-fill', 'text-warning bi bi-circle-fill', 'text-danger bi bi-circle-fill',
         ];
         //salviamo ognuna di queste etichette all'interno di adult, medical ecc 
         $i->adult = $likelihoodName[$adult];
