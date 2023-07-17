@@ -73,6 +73,10 @@
                                         class="btn btn-danger shadow mb-3">{{ __('messages.revReject') }}</button>
                                 </form>
                             </div>
+
+                        </div>
+                        <div class="row">
+                            
                         </div>
                     </div>
                 </div>
