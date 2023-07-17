@@ -2,12 +2,17 @@
 
 namespace App\Jobs;
 
+use App\Models\Image;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldBeUnique;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+use Spatie\Image\Image as SpatieImage;
+use Spatie\Image\Manipulations;
 
 class RemoveFaces implements ShouldQueue
 {
@@ -28,6 +33,46 @@ class RemoveFaces implements ShouldQueue
      */
     public function handle(): void
     {
-        //
+        $i = Image::find($this->article_image_id);
+        //se l'img non esiste facciamo un return e terminiamo l'esecuzione di questo job
+        if (!$i) {
+            return;
+        }
+
+        $srcPath = storage_path('app/public/' . $i->path);
+        $image = file_get_contents($srcPath);
+
+        //imposta la variabile d'ambiente GOOGLE_APPLICATION_CREDENTIALS al path del credential files
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
+
+        //cloud.google.com/vision/docs/detecting-faces
+        $imageAnnotator = new ImageAnnotatorClient();
+        $response = $imageAnnotator->faceDetection($image);
+        $faces = $response->getFaceAnnotations();
+
+        foreach ($faces as $face) {
+            $vertices = $face->getBoundingPoly()->getVertices();
+
+            $bounds = [];
+            foreach ($vertices as $vertex) {
+                $bounds[] = [$vertex->getX(), $vertex->getY()];
+            }
+
+            $w = $bounds[2][0] - $bounds[0][0];
+            $h = $bounds[2][1] - $bounds[0][1];
+
+            $image = SpatieImage::load($srcPath);
+
+            $image->watermark(base_path('resources/img/smile.png'))
+                ->watermarkPosition('top-left')
+                ->watermarkPadding($bounds[0][0], $bounds[0][1])
+                ->watermarkWith($w, Manipulations::UNIT_PIXELS)
+                ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
+                ->watermarkFit(Manipulations::FIT_STRETCH);
+
+            $image->save($srcPath);
+        }
+
+        $imageAnnotator->close();
     }
 }
