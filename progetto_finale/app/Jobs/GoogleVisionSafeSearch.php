@@ -41,7 +41,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $image = file_get_contents(storage_path('app/public/' . $i->path));
         //impostiamo le variabili di ambiente per accedere alle credenziali del servizio google
         //lo sto aggiungendo nel .env
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('2023-05-11-hkpt-presto-user-story-7.json'));
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('Google_credential.json'));
 
         $imageAnnotator = new ImageAnnotatorClient();
         //avviamo la funzione safesearch sull'img 

@@ -15,7 +15,7 @@
             <ul class='sub-menus'>
 
                 @foreach ($categories as $category)
-                    <li><a href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name) }}</a>
+                    <li><a href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name ) }}</a>
                     </li>
                 @endforeach
 
