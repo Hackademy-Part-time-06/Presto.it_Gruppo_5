@@ -5,7 +5,7 @@
     <div class="container-fluid bordo-img">
         <div class="pos-div p-3">
             <div class="bordo-img p-0">
-                <img src="/media/eCommerce.jpeg" class="img-fluid img-header" alt="immagine-header">
+                <img src="/media/eCommerceRed.jpg" class="img-header" alt="immagine-header">
             </div>
 
 
