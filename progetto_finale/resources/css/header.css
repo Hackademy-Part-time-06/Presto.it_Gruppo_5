@@ -3,7 +3,7 @@
   background-image: linear-gradient(to right,
       #fa0707,
       #751600 50%,
-      rgb(188 93 93) 50%);
+      rgb(188 93 93) 50%); 
   background-size: 200% 100%;
   background-position: -100%;
   display: inline-block;
@@ -109,7 +109,7 @@ header .container {
 
 .img-header {
 
-  opacity: 0.8;
+  opacity: 0.9;
 
 }
 
