@@ -4,15 +4,16 @@ namespace App\Jobs;
 
 use App\Models\Image;
 use Illuminate\Bus\Queueable;
+use Spatie\Image\Manipulations;
 use Illuminate\Queue\SerializesModels;
+use Spatie\Image\Image as SpatieImage;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
-use Spatie\Image\Image as SpatieImage;
-use Spatie\Image\Manipulations;
 
 class RemoveFaces implements ShouldQueue
 {
@@ -66,7 +67,7 @@ class RemoveFaces implements ShouldQueue
             $image->watermark(base_path('resources/img/smile.png'))
                 ->watermarkPosition('top-left')
                 ->watermarkPadding($bounds[0][0], $bounds[0][1])
-                ->watermarkWith($w, Manipulations::UNIT_PIXELS)
+                ->watermarkWidth($w, Manipulations::UNIT_PIXELS)
                 ->watermarkHeight($h, Manipulations::UNIT_PIXELS)
                 ->watermarkFit(Manipulations::FIT_STRETCH);
 

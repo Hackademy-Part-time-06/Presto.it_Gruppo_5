@@ -96,8 +96,8 @@ class ArticleCreateForm extends Component
                     new GoogleVisionLabelImage($newImage->id),
                 ])->dispatch($newImage->id);
 
-                 dispatch(new GoogleVisionSafeSearch($newImage->id));
-                 dispatch(new GoogleVisionLabelImage($newImage->id));
+                //  dispatch(new GoogleVisionSafeSearch($newImage->id));
+                //  dispatch(new GoogleVisionLabelImage($newImage->id));
             }
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
@@ -114,7 +114,7 @@ class ArticleCreateForm extends Component
 
         $this->reset('user_id', 'category_id', 'title', 'price', 'description', 'images', 'temporary_images');
 
-        session()->flash('article', 'Articolo inserito correttamente');
+        session()->flash('article', 'Articolo inserito correttamente, sarà pubblicato dopo la verifica di uno dei nostri Revisor');
         /*
         return redirect()
                 ->route('articles.index')
