@@ -8,74 +8,85 @@
             <div class="col-md-6">
                 @if ($article_to_check)
                     {{-- carosello --}}
-                    <section class="mt-4 mx-4">
-                        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                            </div>
-                            @if ($article_to_check->images)
-                                <div class="carousel-inner">
-                                    @foreach ($article_to_check->images as $image)
-                                        <div class="carousel-item @if ($loop->first) active @endif">
+                    @if ($article_to_check->images)
+
+                        @foreach ($article_to_check->images as $image)
+                            <section class="mt-4 mx-4">
+                                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleCaptions"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleCaptions"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+
+                                    <div class="carousel-inner">
+                                        <div class=" @if ($loop->first) active @endif">
                                             <img class="img-fluid" src="{{ Storage::url($image->path) }}"
                                                 alt="..." />
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mt-5 box-google-vision">
-                                                    <h5 class="text-google-vison">Parametri:</h5>
-                                                    <p class="text-google-vison">Adulti:<span
-                                                            class="text-google-vison p-2 {{ $image->adult }}"></span>
-                                                    </p>
-                                                    <p class="text-google-vison">Satira:<span
-                                                            class="text-google-vison p-2 {{ $image->spoof }}"></span>
-                                                    </p>
-                                                    <p class="text-google-vison">Medicina:<span
-                                                            class="text-google-vison p-2 {{ $image->medical }}"></span>
-                                                    </p>
-                                                    <p class="text-google-vison">Violenza:<span
-                                                            class="text-google-vison p-2 {{ $image->violence }}"></span>
-                                                    </p>
-                                                    <p class="text-google-vison">Contenuto ammiccante:<span
-                                                            class="text-google-vison p-2 {{ $image->racy }}"></span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-5 box-google-vision">
-                                                    <h5 class="text-google-vison">Annotazioni:</h5>
-                                                    <div>
-                                                        @if ($image->labels)
-                                                            @foreach ($image->labels as $label)
-                                                                <p class="text-google-vison d-inline">
-                                                                    {{ $label }} ;</p>
-                                                            @endforeach
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
 
-                    </section>
+                                    </div>
+
+
+
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+
+
+
+                            </section>
+
+                            <div class="row mb-5">
+                                <div class="col-md-6">
+                                    <div class="mt-5 box-google-vision">
+                                        <h5 class="text-google-vison">Parametri:</h5>
+                                        <p class="text-google-vison">Adulti:<span
+                                                class="text-google-vison p-2 {{ $image->adult }}"></span>
+                                        </p>
+                                        <p class="text-google-vison">Satira:<span
+                                                class="text-google-vison p-2 {{ $image->spoof }}"></span>
+                                        </p>
+                                        <p class="text-google-vison">Medicina:<span
+                                                class="text-google-vison p-2 {{ $image->medical }}"></span>
+                                        </p>
+                                        <p class="text-google-vison">Violenza:<span
+                                                class="text-google-vison p-2 {{ $image->violence }}"></span>
+                                        </p>
+                                        <p class="text-google-vison">Contenuto ammiccante:<span
+                                                class="text-google-vison p-2 {{ $image->racy }}"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mt-5 box-google-vision">
+                                        <h5 class="text-google-vison">Annotazioni:</h5>
+                                        <div>
+                                            @if ($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    <p class="text-google-vison d-inline">
+                                                        {{ $label }} ;</p>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    @endif
 
             </div>
 
