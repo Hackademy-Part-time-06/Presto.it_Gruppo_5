@@ -25,6 +25,41 @@
                                             <img class="img-fluid" src="{{ Storage::url($image->path) }}"
                                                 alt="..." />
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mt-5 box-google-vision">
+                                                    <h5 class="text-google-vison">Parametri:</h5>
+                                                    <p class="text-google-vison">Adulti:<span
+                                                            class="text-google-vison p-2 {{ $image->adult }}"></span>
+                                                    </p>
+                                                    <p class="text-google-vison">Satira:<span
+                                                            class="text-google-vison p-2 {{ $image->spoof }}"></span>
+                                                    </p>
+                                                    <p class="text-google-vison">Medicina:<span
+                                                            class="text-google-vison p-2 {{ $image->medical }}"></span>
+                                                    </p>
+                                                    <p class="text-google-vison">Violenza:<span
+                                                            class="text-google-vison p-2 {{ $image->violence }}"></span>
+                                                    </p>
+                                                    <p class="text-google-vison">Contenuto ammiccante:<span
+                                                            class="text-google-vison p-2 {{ $image->racy }}"></span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mt-5 box-google-vision">
+                                                    <h5 class="text-google-vison">Annotazioni:</h5>
+                                                    <div>
+                                                        @if ($image->labels)
+                                                            @foreach ($image->labels as $label)
+                                                                <p class="text-google-vison d-inline">
+                                                                    {{ $label }} ;</p>
+                                                            @endforeach
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </div>
                             @endif
@@ -85,31 +120,7 @@
             </div>
 
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="mt-5 box-google-vision">
-                    <h5 class="text-google-vison">Parametri:</h5>
-                    <p class="text-google-vison">Adulti:<span class="text-google-vison p-2 {{ $image->adult }}"></span></p>
-                    <p class="text-google-vison">Satira:<span class="text-google-vison p-2 {{ $image->spoof }}"></span></p>
-                    <p class="text-google-vison">Medicina:<span class="text-google-vison p-2 {{ $image->medical }}"></span></p>
-                    <p class="text-google-vison">Violenza:<span class="text-google-vison p-2 {{ $image->violence }}"></span></p>
-                    <p class="text-google-vison">Contenuto ammiccante:<span class="text-google-vison p-2 {{ $image->racy }}"></span></p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="mt-5 box-google-vision">
-                    <h5 class="text-google-vison">Annotazioni:</h5>
-                    <div>
-                    @if ($image->labels)
-                        @foreach ($image->labels as $label)
-                            <p class="text-google-vison d-inline">{{ $label }} ;</p>
-                        @endforeach
 
-                    @endif
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     @endif
 </x-main>
