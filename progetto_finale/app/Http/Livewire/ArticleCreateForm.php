@@ -114,7 +114,7 @@ class ArticleCreateForm extends Component
 
         $this->reset('user_id', 'category_id', 'title', 'price', 'description', 'images', 'temporary_images');
 
-        session()->flash('article', 'Articolo inserito correttamente, sarà pubblicato dopo la verifica di uno dei nostri Revisor');
+        session()->flash('article', 'Articolo inserito correttamente');
         /*
         return redirect()
                 ->route('articles.index')
