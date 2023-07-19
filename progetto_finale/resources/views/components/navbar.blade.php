@@ -1,6 +1,11 @@
 <nav class="fixed-top" id='menu'>
     <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
     <ul>
+        <li class="img-container">
+            <a class="navbar-brand img-container" href="/">
+                <img src="{{url('media/Logo.png')}}" alt="Logo">
+            </a>
+        </li>
         <li><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
                 href="{{ route('home') }}">{{ __('messages.navHome') }}</a></li>
         <li><a class='dropdown-arrow' href='#'>{{ __('messages.navAnnouncements') }} <i

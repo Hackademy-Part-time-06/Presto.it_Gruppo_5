@@ -28,3 +28,14 @@ main {
 
 
 }
+
+.img-container{
+    width: 200px;
+    height: 60px;
+    text-align: center
+}
+.img-container img{
+    width: 150px;
+    position: relative;
+    bottom: 48px;
+}
