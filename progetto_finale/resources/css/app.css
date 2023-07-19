@@ -16,7 +16,7 @@
 body {
     font-family: 'Belleza', sans-serif;
     background-color: black;
-   
+
 
 
 
@@ -29,17 +29,28 @@ main {
 
 }
 
-.img-container{
-    width: 200px;
+.img-container {
+    width: 150px;
     height: 60px;
-    text-align: center
+    text-align: center;
+    margin-left: -15px;
 }
-.img-container img{
+
+/* .img-container:hover {
+    width: 150px;
+    height: 60px;
+    text-align: center;
+    margin-left: -15px;
+    background: #ffffff;
+} */
+
+.img-container img {
     width: 150px;
     position: relative;
     bottom: 48px;
 }
-.logo{
+
+.logo {
     position: absolute;
     top: -30px;
     left: -30px;
