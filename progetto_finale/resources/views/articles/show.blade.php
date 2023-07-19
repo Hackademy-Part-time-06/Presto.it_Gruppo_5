@@ -43,7 +43,7 @@
             <div class="col-md-6 ">
                 <div class="lista sfondo-carosello">
                     <h1 class="display-5 fw-bolder py-2">{{ $article->title }}</h1>
-                    <p>{{ __('messages.price') }} {{ $article->price }} {{ $article->price }}</p>
+                    <p>{{ __('messages.price') }} {{ $article->price }} €</p>
                     <hr>
                     <p>{{ __('messages.description') }} {{ $article->description }}</p>
                     <hr>
