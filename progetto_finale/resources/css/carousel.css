@@ -1,5 +1,5 @@
 .carousel-item {
-  height: 65vh;
+height: 150vh;
   min-height: 350px;
   background: no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -35,8 +35,9 @@
  font-size: 20px;
   
 }
-.box-google-vision{
-  
+.img-carosello{
+  width: 100%;
+  height: 50%;
 }
 
 
