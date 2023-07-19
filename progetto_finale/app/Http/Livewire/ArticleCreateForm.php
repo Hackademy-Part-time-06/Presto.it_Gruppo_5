@@ -84,7 +84,6 @@ class ArticleCreateForm extends Component
                 /* $this->article->images()->create(
                     ['path' => $image->store('images', 'public')] 
                 ); */
-
                 $newFileName = "articles/{$this->article->id}"; //creamo un cartella articles con all'interno l'id dell'annuncio
                 $newImage = $this->article->images()->create(           //ogni annuncio avrà l'img croppata in questa cartella
                     ['path' => $image->store($newFileName, 'public')]

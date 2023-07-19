@@ -19,6 +19,7 @@
                             <div class="carousel-inner">
                                 @foreach ($article->images as $image)
                                     <div class="carousel-item @if ($loop->first) active @endif">
+                                        <img class="logo"src="{{url('media/Logo.png')}}" alt="Watermark">
                                         <img class="img-fluid" src="{{ Storage::url($image->path) }}" alt="..." />
                                     </div>
                                 @endforeach

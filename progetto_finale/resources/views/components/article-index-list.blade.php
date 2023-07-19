@@ -1,6 +1,7 @@
 @forelse ($articles as $article)
     <div class="col-lg-4 col-sm-6 mb-4">
         <div class="card h-100">
+            <img class="logo"src="{{url('media/Logo.png')}}" alt="Watermark">
             <a href="#"><img class="card-img-top"
                     src="@if ($article->images->isEmpty()) https://via.placeholder.com/700x400 @else {{ $article->images->first()->getUrl(300, 300) }} @endif"
                     alt=""></a>

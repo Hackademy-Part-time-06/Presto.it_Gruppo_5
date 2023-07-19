@@ -4,6 +4,7 @@
             @forelse ($articles as $article)
                 <div class="col-lg-4 col-sm-6 mt-5">
                     <div class="card h-100">
+                        <img class="logo"src="{{url('media/Logo.png')}}" alt="Watermark">
                         <a href="#"><img class="card-img-top" src="https://via.placeholder.com/700x400"
                                 alt=""></a>
                         <div class="card-body">
