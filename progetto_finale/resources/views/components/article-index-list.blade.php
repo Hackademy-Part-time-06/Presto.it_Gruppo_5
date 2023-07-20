@@ -3,7 +3,7 @@
         <div class="card h-100">
             <img class="logo"src="{{url('media/Logo.png')}}" alt="Watermark">
             <a href="#"><img class="card-img-top"
-                    src="@if ($article->images->isEmpty()) https://via.placeholder.com/700x400 @else {{ $article->images->first()->getUrl(300, 300) }} @endif"
+                    src="@if ($article->images->isEmpty()) {{url('media/default-img.gif')}} @else {{ $article->images->first()->getUrl(300, 300) }} @endif"
                     alt=""></a>
             <div class="card-body">
                 <h4 class="card-title">

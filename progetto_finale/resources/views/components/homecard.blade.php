@@ -1,6 +1,6 @@
 <div class="card width: 18rem; ">
     <img class="logo"src="{{url('media/Logo.png')}}" alt="Watermark">
-    <a ><img class="card-img-top" src="@if($latestarticle->images->isEmpty()) https://via.placeholder.com/700x400 @else {{$latestarticle->images->first()->getUrl(300 , 300)}} @endif" alt=""></a>
+    <a ><img class="card-img-top" src="@if($latestarticle->images->isEmpty()) {{url('media/default-img.gif')}} @else {{$latestarticle->images->first()->getUrl(300 , 300)}} @endif" alt=""></a>
     <div class="card-body">
         <h4 class="card-title">
             <h3>{{ $latestarticle->title }}</h3>

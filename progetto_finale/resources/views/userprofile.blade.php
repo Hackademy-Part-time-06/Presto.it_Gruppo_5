@@ -8,7 +8,7 @@
       <div class="col-lg-4">
         <div class="card mb-4" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
           <div class="card-body text-center text-white" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
-            <img src="{{empty(Auth::user()->avatar) ? Storage::url('/images/default-img.gif') : Storage::url(Auth::user()->avatar)}}" alt="avatar"
+            <img src="{{empty(Auth::user()->avatar) ? url('media/default-img.gif') : Storage::url(Auth::user()->avatar)}}" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3">{{Auth::user()->name.' '.Auth::user()->surname}}</h5>
             <p class="mb-1">
@@ -101,7 +101,7 @@
         </div>
 
         <div class="row">
-          <div class="col-6 pt-5">
+          <div class="col col-lg-6 pt-5">
             <h2 class="text-center"><i class="bi bi-arrow-90deg-down"></i>I TUOI ARTICOLI</h2>
           </div>
         </div>
