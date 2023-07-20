@@ -36,7 +36,6 @@
 
 
         </li>
-        <li><a href='#'>{{ __('messages.navAbout') }}</a></li>
 
         @auth
             @if (Auth::user()->is_revisor)
