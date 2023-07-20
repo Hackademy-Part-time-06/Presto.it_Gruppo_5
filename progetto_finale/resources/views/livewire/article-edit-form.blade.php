@@ -74,40 +74,6 @@
 
                                             </div>
 
-                                            <!-- Edit Immagini  -->
-                                            <div class="mb-3 form-group">
-                                                <label for="input-image"
-                                                    class="form-label text-white">{{ __('messages.insertImg') }}</label>
-                                                <input wire:model="temporary_images" name="images" class="form-style"
-                                                    type="file" multiple />
-                                                <!-- Messaggio di errore -->
-                                                @error('temporary_images.*')
-                                                    <span class="error">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                            {{-- se l'immagine non è vuota --}}
-                                            @if (!empty($images))
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <p> {{ __('messages.photoPreview') }} </p>
-                                                        <div
-                                                            class="row border border-4 border-info rounded shadow py-4">
-                                                            @foreach ($images as $key => $image)
-                                                                <div class="col my-3">
-                                                                    <div class="mx-auto shadow rounded">
-                                                                        <img src="{{ Storage::url($image->path) }}"
-                                                                            alt="Immagine">
-                                                                    </div>
-                                                                    <button type="button"
-                                                                        class="btn btn-danger shadow text-center mt-2 mx-auto"
-                                                                        wire:click="removeImage({{ $key }})">{{ __('messages.deleteBtn') }}</button>
-                                                                </div>
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            @endif
-
                                             <button type="submit"
                                                 class="button-create">{{ __('messages.editBtn') }}</button>
 
