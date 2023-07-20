@@ -20,14 +20,16 @@ class ArticleController extends Controller
     //Search
     public function searchArticles(Request $request)
     {
-        $searched = ucfirst($request->searched);
+
         $categories = Category::all();
-        foreach ($categories as $category) {
-            if ($searched == $category->name) {
+        
+        foreach($categories as $key => $category){
+            if($request->searched == $category->name){
                 $searched = $category->id;
             }
         }
-        $articles = Article::search($searched)->where('is_accepted', true)->paginate(6);
+
+        $articles = Article::search($request->searched)->where('is_accepted', true)->paginate(6);
         return view('articles.search', compact('articles'));
     }
 

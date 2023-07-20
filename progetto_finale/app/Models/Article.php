@@ -17,7 +17,7 @@ class Article extends Model
     //Search
     
     /**
-     * Get
+     * Get the indexable data array for the model.
      * 
      * @return array
      */
