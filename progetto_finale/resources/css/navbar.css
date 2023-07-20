@@ -136,6 +136,13 @@ nav {
     margin-left: 5px;
 }
 
+.logoNav {
+    color: #000000;
+    background-color: rgb(187, 110, 110);
+    width: 100%;
+
+}
+
 #menu li a:hover {
     color: #000000;
     background: #FFFFFF;
@@ -261,3 +268,9 @@ nav {
     min-width: 20px !important;
     max-width: 60px !important;
 }
+
+/* .round {
+    background-color: #ffffff9a;
+    border-radius: 10%;
+    margin: 0;
+} */

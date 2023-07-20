@@ -1,10 +1,12 @@
 <nav class="fixed-top" id='menu'>
     <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
     <ul>
-        <li class="img-container">
-            <a class="navbar-brand img-container" href="/">
-                <img src="{{url('media/Logo.png')}}" alt="Logo">
+        <li>
+
+            <a class="navbar-brand img-container logoNav" href="/">
+                <img src="{{ url('media/Logo.png') }}" alt="Logo">
             </a>
+
         </li>
         <li><a class="nav-link nav-button ps-2 @if (Route::currentRouteName() == 'home') active @endif" aria-current="page"
                 href="{{ route('home') }}">{{ __('messages.navHome') }}</a></li>
@@ -20,7 +22,7 @@
             <ul class='sub-menus'>
 
                 @foreach ($categories as $category)
-                    <li><a href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name ) }}</a>
+                    <li><a href="{{ route('category.show', $category) }}">{{ __('messages.' . $category->name) }}</a>
                     </li>
                 @endforeach
 

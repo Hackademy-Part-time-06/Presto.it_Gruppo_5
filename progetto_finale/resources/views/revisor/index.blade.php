@@ -1,6 +1,6 @@
 <x-main>
 
-    <div class="container">
+    <div class="container ">
         <h1 class="text-white text-center mt-5">
             {{ $article_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare' }}
         </h1>
@@ -16,7 +16,7 @@
 
                                     @foreach ($article_to_check->images as $image)
                                         <div class="carousel-item @if ($loop->first) active @endif">
-                                            <img class="img-fluid" src="{{ Storage::url($image->path) }}"
+                                            <img class="img-carosello" src="{{ Storage::url($image->path) }}"
                                                 alt="..." />
 
                                             <div class="row">
@@ -59,15 +59,7 @@
                                         </div>
                                     @endforeach
 
-                                    <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="0" class="active" aria-current="true"
-                                            aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#carouselExampleCaptions"
-                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                    </div>
+                                   
 
                                 @endif
                             </div>
@@ -119,9 +111,7 @@
                             </div>
 
                         </div>
-                        <div class="row">
 
-                        </div>
 
                     </div>
                 </div>
