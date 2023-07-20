@@ -101,9 +101,8 @@
         </div>
 
         <div class="row">
-
-          <div class="col">
-            <h1 class="text-center">i tuoi articoli</h1>
+          <div class="col-6 pt-5">
+            <h2 class="text-center"><i class="bi bi-arrow-90deg-down"></i>I TUOI ARTICOLI</h2>
           </div>
         </div>
       </div>
