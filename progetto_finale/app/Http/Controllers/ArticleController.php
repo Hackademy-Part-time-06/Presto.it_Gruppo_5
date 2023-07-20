@@ -95,7 +95,7 @@ class ArticleController extends Controller
 
     public function userprofile()
     {
-        $articles = Article::where('user_id', Auth::user()->id)->get();
+        $articles = Article::where('user_id', Auth::user()->id)->where('is_accepted', true)->get();
         return view('userprofile', compact('articles'));
     }
 

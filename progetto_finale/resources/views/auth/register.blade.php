@@ -23,37 +23,72 @@
                         <h5 class="card-title text-center mb-5 fw-light fs-5">{{ __('messages.register') }}</h5>
 
 
-                        <form action="{{ route('register') }}" method="POST">
+                        <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                             @method('POST')
                             @csrf
-
+                            <!-- Input name -->
                             <div class="form-floating mb-3">
-                                <input type="name" class="form-control" id="floatingInputEmail" name="name"
+                                <input type="text" class="form-control" id="floatingInputEmail" name="name"
                                     placeholder="Name">
                                 <label for="floatingInputEmail">{{ __('messages.registerName') }}</label>
                             </div>
 
+                            <!-- Input surname -->
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingSurname" placeholder="Surname"
+                                    name="surname">
+                                <label for="floatingSurname">Cognome</label>
+                            </div>
+
+                            <!-- Input email -->
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="floatingInputEmail"
                                     placeholder="name@example.com" name="email">
                                 <label for="floatingInputEmail">{{ __('messages.emailAddress') }}</label>
                             </div>
 
-
-
+                            <!-- Input password -->
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password">
                                 <label for="floatingPassword">{{ __('messages.password') }}</label>
                             </div>
 
+                            <!-- Password confirmation -->
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
                                     name="password_confirmation">
                                 <label for="floatingPassword">{{ __('messages.confirmPassword') }}</label>
                             </div>
 
+                            <!-- Input number -->
+                            <div class="form-floating mb-3">
+                                <input type="tel" class="form-control" id="floatingSurname" placeholder="Surname"
+                                    name="number">
+                                <label for="floatingSurname">Telefono</label>
+                            </div>
 
+                            <!-- Input city -->
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingCity" placeholder="city"
+                                    name="city">
+                                <label for="floatingDescription">Città</label>
+                            </div>
+
+                            <!-- Input description -->
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingDescription" placeholder="description"
+                                    name="description">
+                                <label for="floatingDescription">Informazioni aggiuntive</label>
+                            </div>
+
+                            <!-- Input Avatar -->
+                            <div class="form-floating mb-3">
+                                <input class="form-control form-control-sm" id="formFileSm" type="file" name="avatar">
+                                <label for="formFileSm" class="form-label">Profile Picture</label>
+                            </div>
+
+                            <!-- Bottone submit -->
                             <div class="d-grid mb-2">
                                 <button type="submit"
                                     class="btn btn-outline-success my-3">{{ __('messages.registerBtn') }}</button>

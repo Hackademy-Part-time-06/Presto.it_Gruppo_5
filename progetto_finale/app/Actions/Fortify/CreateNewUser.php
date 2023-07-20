@@ -21,6 +21,7 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
+            'surname' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
                 'string',
@@ -29,12 +30,30 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
+            'number' => [
+                'string',
+                'min:8',
+                'max:11'
+            ],
+            'city' => 'string',
+            'description' => 'string'
         ])->validate();
 
+        if(request()->hasFile('avatar') && request()->file('avatar')->isValid()){
+            $path_name = request()->file('avatar')->getClientOriginalName();
+            $path_extension = request()->file('avatar')->getClientOriginalExtension();
+        }
+        
+        $path_avatar = request()->file('avatar')->storeAs('public/avatar',$path_name);
         return User::create([
             'name' => $input['name'],
+            'surname' => $input['surname'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'description' => $input['description'],
+            'number' => $input['number'],
+            'city' => $input['city'],
+            'avatar' => $path_avatar,
         ]);
     }
 }
