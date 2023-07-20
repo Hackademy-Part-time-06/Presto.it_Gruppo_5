@@ -14,7 +14,9 @@
                     class="bi bi-caret-down"></i> </a>
             <ul class='sub-menus'>
                 <li><a href="{{ route('articles.index') }}">{{ __('messages.navArticlesInsert') }}</a></li>
-                <li><a href="{{ route('articles.create') }}">{{ __('messages.navInsertArticles') }}</a></li>
+                @auth
+                    <li><a href="{{ route('articles.create') }}">{{ __('messages.navInsertArticles') }}</a></li>
+                @endauth
             </ul>
         </li>
         <li><a class='dropdown-arrow' href='#'>{{ __('messages.navCategory') }}<i class="bi bi-caret-down"></i>
@@ -27,14 +29,6 @@
                 @endforeach
 
             </ul>
-        </li>
-
-
-
-
-
-
-
         </li>
 
         @auth
