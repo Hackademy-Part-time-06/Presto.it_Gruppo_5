@@ -1,7 +1,7 @@
 <x-main>
 
     <div class="container ">
-        <div class="row">
+        <div class="row my-3">
             <div class="col my-5">
                 <x-search-bar />
             </div>

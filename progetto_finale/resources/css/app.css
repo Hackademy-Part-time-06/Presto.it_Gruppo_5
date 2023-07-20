@@ -111,6 +111,7 @@ main {
 	  margin: 0 auto;
   display: table;
   padding: 0 0 8em 0;
+  border: solid rgb(165, 42, 42) 2px;
 }
 
 .table-container td, .container th {

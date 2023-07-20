@@ -24,7 +24,7 @@ class ArticleController extends Controller
         $categories = Category::all();
         
         foreach($categories as $key => $category){
-            if($request->searched == $category->name){
+            if(strtolower($request->searched) == strtolower($category->name)){
                 $searched = $category->id;
             }
         }

@@ -30,21 +30,19 @@ class CreateNewUser implements CreatesNewUsers
                 Rule::unique(User::class),
             ],
             'password' => $this->passwordRules(),
-            'number' => [
-                'string',
-                'min:8',
-                'max:11'
-            ],
-            'city' => 'string',
-            'description' => 'string'
         ])->validate();
 
         if(request()->hasFile('avatar') && request()->file('avatar')->isValid()){
             $path_name = request()->file('avatar')->getClientOriginalName();
-            $path_extension = request()->file('avatar')->getClientOriginalExtension();
+            
+            //$path_extension = request()->file('avatar')->getClientOriginalExtension();
+
+            $path_avatar = request()->file('avatar')->storeAs('public/avatar',$path_name);
         }
-        
-        $path_avatar = request()->file('avatar')->storeAs('public/avatar',$path_name);
+        else{
+            $path_avatar='';
+        }
+
         return User::create([
             'name' => $input['name'],
             'surname' => $input['surname'],
