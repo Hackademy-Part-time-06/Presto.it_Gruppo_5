@@ -1,9 +1,12 @@
 <x-main>
 <section class="container rounded" style="background-color: #eeeeee49;">
+
   <div class="container userprofile-container py-5">
+
     <div class="row">
+
       <div class="col-lg-4">
-        <div class="card mb-4" style="border: solid #323C50; border-radius: 20px;">
+        <div class="card mb-4" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
           <div class="card-body text-center text-white" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
             <img src="{{empty(Auth::user()->avatar) ? Storage::url('/images/default-img.gif') : Storage::url(Auth::user()->avatar)}}" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
@@ -25,61 +28,89 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8">
-        <div class="card mb-4" style="border: solid #323C50; border-radius: 20px;">
-          <div class="card-body text-white" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Full Name</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="mb-0">{{Auth::user()->name.' '.Auth::user()->surname}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Email</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="mb-0">{{Auth::user()->email}}</p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Phone</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="mb-0">
-                  @if (Auth::user()->number)
-                    {{Auth::user()->number}}
-                    @else
-                    N/D
-                  @endif
-                </p>
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Address</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="mb-0">
-                  @if (Auth::user()->city)
-                    {{Auth::user()->city}}
-                    @else
-                    N/D
-                  @endif
-                </p>
+
+      <div class="col-lg-8 container">
+        <div class="row">
+
+          <div class="col">
+            <div class="card mb-5" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
+              <div class="card-body text-white" style="border: solid #323C50; border-radius: 20px; background-color: #323C50;">
+                
+                <div class="row">
+
+                  <div class="col-sm-3">
+                    <p class="mb-0">Full Name</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0">{{Auth::user()->name.' '.Auth::user()->surname}}</p>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div class="row">
+
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0">{{Auth::user()->email}}</p>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div class="row">
+
+                  <div class="col-sm-3">
+                    <p class="mb-0">Phone</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0">
+                      @if (Auth::user()->number)
+                        {{Auth::user()->number}}
+                        @else
+                        N/D
+                      @endif
+                    </p>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div class="row">
+
+                  <div class="col-sm-3">
+                    <p class="mb-0">Address</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="mb-0">
+                      @if (Auth::user()->city)
+                        {{Auth::user()->city}}
+                        @else
+                        N/D
+                      @endif
+                    </p>
+                  </div>
+
+                </div>
+
               </div>
             </div>
           </div>
         </div>
+
+        <div class="row">
+
+          <div class="col">
+            <h1 class="text-center">i tuoi articoli</h1>
+          </div>
+        </div>
       </div>
     </div>
+
     <div class="row">
+
       <div class="col">
         <table class="container table-container  table-striped">
           <thead>
@@ -115,7 +146,9 @@
           </tbody>
         </table>
       </div>
+
     </div>
+
   </div>
-</section>
+</div>
 </x-main>
